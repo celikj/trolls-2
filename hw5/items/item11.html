@@ -1,0 +1,131 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw5 item11</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://aynen.matomo.cloud/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src='https://cdn.matomo.cloud/aynen.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw5 item11</h1>
+
+      <div class="screenshots hidden">
+
+      </div>
+
+      <div class="inputs ">
+        <h3>Inputs</h3>
+
+<div class="input">
+    <input id="v1" placeholder="volt A" type="text">
+</div>
+<div class="input">
+  <input id="e1" placeholder="energy A" type="text">
+</div>
+<div class="input">
+  <input id="v2" placeholder="volt B" type="text">
+</div>
+<div class="input">
+<input id="e2" placeholder="energy B" type="text">
+</div>
+<div class="input">
+  <input id="t" placeholder="time in part C,D (hour)" type="text">
+  </div>
+
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
+
+      <div class="answers ">
+        <h3>Answers</h3>
+
+<div>
+    PART A:
+    <span id="resultA"></span>
+</div>
+<div>
+    PART B:
+    <span id="resultB"></span>
+</div>
+<div>
+    PART C:
+  <span id="resultC"></span>
+</div>
+<div>
+    PART D:
+  <span id="resultD"></span>
+</div>
+<div>
+    PART E: bulb B
+</div>
+
+      </div>
+    </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item10.html">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item12.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+var v1 = Number(document.getElementById('v1').value);
+var v2 = Number(document.getElementById('v2').value);
+var e1 = Number(document.getElementById('e1').value);
+var e2 = Number(document.getElementById('e2').value);
+var t = Number(document.getElementById('t').value)*3600;
+
+//
+var resultA1 = e1/v1;
+var resultA2 = e2/v2;
+var resultB1 = v1/resultA1;
+var resultB2 = v2/resultA2;
+var resultC1 = resultA1*t
+var resultC2 = resultA2*t
+var resultD1 = v1*resultA1*t
+var resultD2 = v2*resultA2*t
+document.getElementById('resultA').innerHTML = resultA1 + "," + resultA2;
+document.getElementById('resultB').innerHTML = resultB1 + "," + resultB2;
+document.getElementById('resultC').innerHTML = resultC1 + "," + resultC2;
+document.getElementById('resultD').innerHTML = resultD1 + "," + resultD2;
+      }
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,408 @@
+* {
+    box-sizing: border-box;
+    --secondary: #ebebeb;
+    --secondary-light: #f9f9f9;
+    --background-color: #fefefe;
+  }
+  
+  body.color-1 {
+    --primary: #3aa000;
+  }
+  
+  body.color-2 {
+    --primary: #3aa000;
+  }
+  
+  body.color-3 {
+    --primary: #3aa000;
+  }
+  
+  body.color-4 {
+    --primary: #3aa000;
+  }
+  
+  body.color-5 {
+    --primary: #ff000c;
+  }
+  
+  body.color-6 {
+    --primary: #ff000c;
+  }
+  
+  body.color-7 {
+    --primary: #ff000c;
+  }
+  
+  body.color-8 {
+    --primary: #ff000c;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fefefe;
+    font-family: 'Montserrat', sans-serif;
+  
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1000px;
+  
+    text-align: left;
+    margin: 0 auto;
+  
+    display: flex;
+    flex: 1;
+  
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: start;
+    align-content: start;
+  
+  }
+  
+  .container>h1 {
+    text-align: center;
+    flex-basis: 100%;
+    font-size: 3rem;
+  }
+  
+  .container h1:after {
+    content: ' ';
+  
+    margin: auto;
+    display: block;
+  
+    margin-top: 10px;
+    height: 3.5px;
+    width: 45%;
+    background: var(--primary);
+  }
+  
+  .container>h3 {
+    text-align: center;
+    margin: 0 auto 20px auto;
+  }
+  
+  .screenshots {
+    width: 100%;
+  }
+  
+  .screenshots img {
+    object-fit: cover;
+    max-width: 100%;
+  
+    cursor: pointer;
+  }
+  
+  .screenshots img:active {
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    position: fixed;
+    top: 0;
+    left: 0;
+  
+    z-index: 100;
+  }
+  
+  .inputs {
+    flex-basis: 49%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+  
+    padding: 10px 20px;
+  
+    max-width: 50%;
+    word-break: break-all;
+  }
+  
+  .inputs>h3 {
+    flex-basis: 100%;
+    text-align: left;
+    position: relative;
+  }
+  
+  .inputs>h3:after {
+    content: ' ';
+  
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+  
+    height: 2px;
+    width: 20%;
+    background: var(--primary);
+  }
+  
+  .inputs .input {
+    margin: 10px;
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .inputs .input span {
+    flex: 1;
+    display: inline-block;
+  
+    font-size: 1.1rem;
+    min-width: 110px;
+  }
+  
+  .inputs .input input {
+    flex: 3;
+  
+    font-size: 1rem;
+  
+    margin-left: 10px;
+    padding: 11px 16px;
+    line-height: 1.4rem;
+    background-color: var(--secondary);
+    border-radius: 4px;
+  
+    border: 2px solid transparent;
+  
+    outline: none;
+  
+    transition: all 120ms ease-in-out;
+    color: var(--primary);
+  }
+  
+  .inputs .input input::placeholder {
+    color: var(--primary);
+  }
+  
+  .inputs .input input:focus {
+    border: 2px solid var(--primary);
+    background-color: var(--secondary-light);
+  }
+  
+  .inputs .calculate-button {
+    padding: 10px 17px;
+    margin: 10px 10px 0 0;
+  
+    font-size: 1.1rem;
+  
+    border: none;
+    outline: 0;
+  
+    cursor: pointer;
+  
+    color: var(--secondary-light);
+    border-radius: 2px;
+    background-color: var(--primary);
+  
+    border: 2.5px solid transparent;
+    transition: all 120ms ease-in-out;
+  }
+  
+  .inputs .calculate-button:hover {
+    border: 2.5px solid var(--primary);
+    color: var(--primary);
+    background-color: var(--secondary-light);
+    transform: scale(1.05);
+  }
+  
+  .inputs .calculate-button:active {
+    transform: scale(.95);
+  }
+  
+  .answers {
+    flex-basis: 49%;
+  
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    align-items: center;
+  
+    justify-content: center;
+  
+    vertical-align: middle;
+  
+    padding: 10px;
+  
+    max-width: 50%;
+    word-break: break-all;
+  }
+  
+  .answers>h3 {
+    flex-basis: 100%;
+    text-align: left;
+    position: relative;
+  }
+  
+  .answers>h3:after {
+    content: ' ';
+  
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+  
+    height: 2px;
+    width: 20%;
+    background: var(--primary);
+  }
+  
+  .answers>div {
+    font-size: 1.1rem;
+    flex: 1 0 100%;
+    padding: 23px 10px;
+    font-style: italic;
+  }
+  
+  .answers>div>span {
+    font-style: normal;
+    margin-left: 5px;
+    letter-spacing: 0.05rem;
+  }
+  
+  .buttons {
+    width: 100%;
+    max-width: 1000px;
+  
+    margin-top: 30px;
+  
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row;
+  
+    position: relative;
+  
+    padding: 0 20px;
+  }
+  
+  .buttons.reverse {
+    flex-flow: row-reverse;
+  }
+  
+  .buttons>a {
+    margin-top: 40px;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+  
+    color: var(--primary);
+  
+    transition: all 170ms ease-in-out;
+  }
+  
+  .buttons>a.button-middle {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+  
+  .buttons>a:before {
+    content: ' ';
+    display: block;
+    bottom: -2px;
+    position: absolute;
+    height: 1.5px;
+    width: 100%;
+    background-color: transparent;
+  
+    transition: all 70ms ease-in-out;
+  }
+  
+  .buttons>a:hover:before {
+    background-color: var(--primary);
+  }
+  
+  .buttons>a.button-previous:after,
+  .buttons>a.button-next:after {
+    color: var(--primary);
+  
+    display: inline-block;
+    position: absolute;
+    top: 0;
+  }
+  
+  .buttons>a.button-previous:after {
+    left: -13px;
+    content: '<';
+  }
+  
+  .buttons>a.button-next:after {
+    right: -13px;
+    content: '>';
+  }
+  
+  .hw-items {
+    flex-basis: 100%;
+    display: flex;
+  
+    flex-flow: row wrap;
+  
+    justify-content: center;
+  }
+  
+  .hw-items>a {
+    display: block;
+    text-decoration: none;
+  
+    flex-basis: 28%;
+  
+    padding: 12px;
+    margin: 14px 2%;
+  
+    text-align: center;
+  
+    color: var(--secondary-light);
+    background-color: var(--primary);
+    border: 2.5px solid transparent;
+  
+    transition: all 120ms ease-in-out;
+    cursor: pointer;
+  }
+  
+  .hw-items>a:hover {
+    border: 2.5px solid var(--primary);
+    color: var(--primary);
+    background-color: var(--secondary-light);
+    transform: scale(1.05);
+  }
+  
+  .hw-items>a:active {
+    transform: scale(0.95);
+  }
+  
+  .hws {
+    flex-basis: 100%;
+    display: flex;
+  
+    flex-flow: row wrap;
+  
+    justify-content: center;
+  }
+  
+  .footer {
+    text-align: center;
+  
+    margin-top: 30px;
+  
+    padding: 11px 0;
+    background: var(--secondary);
+    color: #454545;
+  }
+  
+  @media screen and (max-width: 767px) {
+  
+    .inputs,
+    .answers {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
