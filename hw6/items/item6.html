@@ -2,14 +2,14 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Trolls2 hw5 item1</title>
+    <title>Trolls2 hw6 item6</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="../../css/style.css" rel="stylesheet"/>
     
-    
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
     <script>
@@ -35,7 +35,6 @@
       })();
     </script>
     <!-- End Matomo Code -->
-    
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8843728047882160"
      crossorigin="anonymous"></script>
@@ -43,7 +42,7 @@
 
   <body>
     <div class="container">
-      <h1>trolls2 hw5 item1</h1>
+      <h1>trolls2 hw6 item6</h1>
 
       <div class="screenshots hidden">
 
@@ -53,31 +52,41 @@
         <h3>Inputs</h3>
 
 <div class="input">
-    <input id="r1" placeholder="resistance 1" type="text">
+    <input id="emf" placeholder="emf(V)" type="text">
 </div>
 <div class="input">
-    <input id="r2" placeholder="resistance 2" type="text">
+  <input id="rb" placeholder="R_b" type="text">
 </div>
-
+<div class="input">
+  <input id="rv" placeholder="R_v" type="text">
+</div>
+<div class="input">
+  <input id="per" placeholder="percentage" type="text">
+</div>
 
         <button class="calculate-button " onclick="calculate()">Calculate</button>
       </div>
-
+    
       <div class="answers ">
         <h3>Answers</h3>
 
 <div>
-    PART A:
-    <span id="result"></span>
+  PART A:
+  <span id="result1"></span>
+</div>
+
+<div>
+  PART B:
+  <span id="result2"></span>
 </div>
 
       </div>
     </div>
 
     <div class="buttons ">
-      
+      <a class="button-previous" href="item5.html">Previous</a>
       <a class="button-middle" href="../menu.html">Items</a>
-      <a class="button-next" href="item2.html">Next</a>
+      <a class="button-next" href="item7.html">Next</a>
     </div>
 
     <div class="footer">
@@ -85,17 +94,28 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
+
     <script>
       function calculate() {
-var r1 = Number(document.getElementById('r1').value);
-var r2 = Number(document.getElementById('r2').value);
+var emf = Number(document.getElementById('emf').value);
+var rb = Number(document.getElementById('rb').value);
+var rv = Number(document.getElementById('rv').value);
+var per = Number(document.getElementById('per').value);
 
-var result;
-result = 4-((r1/r2)-1)/(-5*Math.pow(10, -4))
-document.getElementById('result').innerHTML = result;
+//
+var result1 = emf * rv/(rb+rv);
+var result2 =  1/((100/per) - 1); 
+
+var result1Exp = result1.toExponential();
+var result1Replace = result1Exp.replace(/e\+?/, ' * 10^');
+var result2Exp = result2.toExponential();
+var result2Replace = result2Exp.replace(/e\+?/, ' * 10^');
+document.getElementById('result1').innerHTML = result1Replace;
+document.getElementById('result2').innerHTML = result2Replace;
 
       }
     </script>
+    
   </body>
 
 </html>

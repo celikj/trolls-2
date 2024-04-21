@@ -2,14 +2,14 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Trolls2 hw5 item1</title>
+    <title>Trolls2 hw6 item7</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="../../css/style.css" rel="stylesheet"/>
-    
-    
+
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
     <script>
@@ -35,7 +35,6 @@
       })();
     </script>
     <!-- End Matomo Code -->
-    
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8843728047882160"
      crossorigin="anonymous"></script>
@@ -43,7 +42,7 @@
 
   <body>
     <div class="container">
-      <h1>trolls2 hw5 item1</h1>
+      <h1>trolls2 hw6 item7</h1>
 
       <div class="screenshots hidden">
 
@@ -53,12 +52,11 @@
         <h3>Inputs</h3>
 
 <div class="input">
-    <input id="r1" placeholder="resistance 1" type="text">
+    <input id="v" placeholder="terminal voltage" type="text">
 </div>
 <div class="input">
-    <input id="r2" placeholder="resistance 2" type="text">
+  <input id="c" placeholder="current (A)" type="text">
 </div>
-
 
         <button class="calculate-button " onclick="calculate()">Calculate</button>
       </div>
@@ -71,13 +69,18 @@
     <span id="result"></span>
 </div>
 
+<div>
+  PART B:
+  <span id="result2"></span>
+</div>
+
       </div>
     </div>
 
     <div class="buttons ">
-      
+      <a class="button-previous" href="item6.html">Previous</a>
       <a class="button-middle" href="../menu.html">Items</a>
-      <a class="button-next" href="item2.html">Next</a>
+      <a class="button-next" href="item8.html">Next</a>
     </div>
 
     <div class="footer">
@@ -87,13 +90,17 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var r1 = Number(document.getElementById('r1').value);
-var r2 = Number(document.getElementById('r2').value);
+var v = Number(document.getElementById('v').value);
+var c = Number(document.getElementById('c').value);
+var result = (12-v)/c;
+var result2 = v/c; 
+var resultExp = result.toExponential();
+var resultReplace = resultExp.replace(/e\+?/, ' * 10^');
+var result2Exp = result2.toExponential();
+var result2Replace = result2Exp.replace(/e\+?/, ' * 10^');
 
-var result;
-result = 4-((r1/r2)-1)/(-5*Math.pow(10, -4))
-document.getElementById('result').innerHTML = result;
-
+document.getElementById('result').innerHTML = resultReplace;
+document.getElementById('result2').innerHTML = result2Replace;
       }
     </script>
   </body>

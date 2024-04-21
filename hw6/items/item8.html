@@ -2,14 +2,14 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Trolls2 hw5 item1</title>
+    <title>Trolls2 hw6 item8</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="../../css/style.css" rel="stylesheet"/>
-    
-    
+
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
     <script>
@@ -35,7 +35,6 @@
       })();
     </script>
     <!-- End Matomo Code -->
-    
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8843728047882160"
      crossorigin="anonymous"></script>
@@ -43,7 +42,7 @@
 
   <body>
     <div class="container">
-      <h1>trolls2 hw5 item1</h1>
+      <h1>trolls2 hw6 item8</h1>
 
       <div class="screenshots hidden">
 
@@ -53,31 +52,67 @@
         <h3>Inputs</h3>
 
 <div class="input">
-    <input id="r1" placeholder="resistance 1" type="text">
+    <input id="V" placeholder="voltage V" type="text">
 </div>
 <div class="input">
-    <input id="r2" placeholder="resistance 2" type="text">
+  <input id="r" placeholder="r" type="text">
 </div>
-
+<div class="input">
+  <input id="R" placeholder="R" type="text">
+</div>
 
         <button class="calculate-button " onclick="calculate()">Calculate</button>
       </div>
 
       <div class="answers ">
         <h3>Answers</h3>
+     
+<div>
+  PART A:
+  left decreases.
+</div>
+<div>
+  PART B:
+  middle increases.
+</div>
+<div>
+  PART C:
+  right goes to 0.
+</div>
+<div>
+  PART D:
+  left decreases.
+</div>
+<div>
+  PART E:
+  middle increases
+</div>
+<div>
+  PART F:
+  right goes to 0.
+</div>
+<div>
+  PART G:
+  The terminal voltage increases.
+</div>        
 
 <div>
-    PART A:
-    <span id="result"></span>
+  PART H:
+  <span id="result2"></span>
 </div>
+<div>
+  PART I:
+  <span id="result"></span>
+</div>
+
 
       </div>
     </div>
 
     <div class="buttons ">
-      
+      <a class="button-previous" href="item7.html">Previous</a>
       <a class="button-middle" href="../menu.html">Items</a>
-      <a class="button-next" href="item2.html">Next</a>
+      <a class="button-next" href="item9.html">Next</a>
     </div>
 
     <div class="footer">
@@ -87,12 +122,16 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var r1 = Number(document.getElementById('r1').value);
-var r2 = Number(document.getElementById('r2').value);
+var V = Number(document.getElementById('V').value);
+var R = Number(document.getElementById('R').value);
+var r = Number(document.getElementById('r').value);
 
-var result;
-result = 4-((r1/r2)-1)/(-5*Math.pow(10, -4))
+//
+
+var result = V-(V*r)/(2*R+r);
+var result2 = V-(V*r)/(3/2*R+r);
 document.getElementById('result').innerHTML = result;
+document.getElementById('result2').innerHTML = result2;
 
       }
     </script>
