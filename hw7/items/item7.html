@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Trolls2 hw6 item7</title>
+    <title>Trolls2 hw7 item7</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -42,36 +42,14 @@
 
   <body>
     <div class="container">
-      <h1>trolls2 hw6 item7</h1>
-
-      <div class="screenshots hidden">
-
-      </div>
-
-      <div class="inputs ">
-        <h3>Inputs</h3>
-
-<div class="input">
-    <input id="v" placeholder="terminal voltage" type="text">
-</div>
-<div class="input">
-  <input id="c" placeholder="current (A)" type="text">
-</div>
-
-        <button class="calculate-button " onclick="calculate()">Calculate</button>
-      </div>
+      <h1>trolls2 hw7 item7</h1>
 
       <div class="answers ">
         <h3>Answers</h3>
 
 <div>
-    PART A:
-    <span id="result"></span>
-</div>
-
-<div>
-  PART B:
-  <span id="result2"></span>
+    PART A: 
+    The helix for B will have wider circles closer to each other.
 </div>
 
       </div>
@@ -88,21 +66,6 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
-    <script>
-      function calculate() {
-var v = Number(document.getElementById('v').value);
-var c = Number(document.getElementById('c').value);
-var result = (12-v)/c;
-var result2 = v/c; 
-var resultExp = result.toExponential();
-var resultReplace = resultExp.replace(/e\+?/, ' * 10^');
-var result2Exp = result2.toExponential();
-var result2Replace = result2Exp.replace(/e\+?/, ' * 10^');
-
-document.getElementById('result').innerHTML = resultReplace;
-document.getElementById('result2').innerHTML = result2Replace;
-      }
-    </script>
   </body>
 
 </html>
