@@ -1,0 +1,103 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw6 item11</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://aynen.matomo.cloud/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src='https://cdn.matomo.cloud/aynen.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8843728047882160"
+     crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw6 item11</h1>
+
+      <div class="screenshots hidden">
+
+      </div>
+
+      <div class="inputs ">
+        <h3>Inputs</h3>
+
+<div class="input">
+    <input id="fi" placeholder="F_i " type="text">
+</div>
+<div class="input">
+  <input id="fj" placeholder="F_j (positive)" type="text">
+</div>
+<div class="input">
+  <input id="b" placeholder="B" type="text">
+</div>
+
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
+
+      <div class="answers ">
+        <h3>Answers</h3>
+
+<div>
+    PART A:
+    <span id="result"></span>
+</div>
+
+      </div>
+    </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item10.html">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item12.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+var fi = Number(document.getElementById('fi').value);
+var fj = Number(document.getElementById('fj').value);
+var b = Number(document.getElementById('b').value);
+
+var result1 = -fi/(b*1.6*Math.pow(10, -6))
+var result2 = -fj/(b*1.6*Math.pow(10, -6))
+//
+
+document.getElementById('result').innerHTML = result1 + "," + result2;
+      }
+    </script>
+  </body>
+
+</html>
