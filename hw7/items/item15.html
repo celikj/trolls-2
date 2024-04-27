@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Trolls2 hw5 item1</title>
+    <title>Trolls2 hw7 item15</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -35,7 +35,6 @@
       })();
     </script>
     <!-- End Matomo Code -->
-    
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8843728047882160"
      crossorigin="anonymous"></script>
@@ -43,41 +42,49 @@
 
   <body>
     <div class="container">
-      <h1>trolls2 hw5 item1</h1>
-
+      <h1>trolls2 hw7 item15</h1>
       <div class="screenshots hidden">
 
       </div>
-
+  
       <div class="inputs ">
         <h3>Inputs</h3>
+  
+  <div class="input">
+    <input id="a" placeholder="wire (cm)" type="text">
+  </div>
+  
+  <div class="input">
+  <input id="b" placeholder="current (A)" type="text">
+  </div>
 
-<div class="input">
-    <input id="r1" placeholder="resistance 1" type="text">
-</div>
-<div class="input">
-    <input id="r2" placeholder="resistance 2" type="text">
-</div>
-
-
+  <div class="input">
+    <input id="c" placeholder="magnetic field (T)" type="text">
+    </div>
+  
         <button class="calculate-button " onclick="calculate()">Calculate</button>
       </div>
-
       <div class="answers ">
         <h3>Answers</h3>
 
 <div>
-    PART A:
-    <span id="result"></span>
+  PART A:
+  <span id="result1"></span>
 </div>
+
+<div>
+  PART B:
+  <span id="result2"></span>
+</div>
+
 
       </div>
     </div>
 
     <div class="buttons ">
-      <a></a>
+      <a class="button-previous" href="item14.html">Previous</a>
       <a class="button-middle" href="../menu.html">Items</a>
-      <a class="button-next" href="item2.html">Next</a>
+      <a class="button-next" href="item16.html">Next</a>
     </div>
 
     <div class="footer">
@@ -87,12 +94,16 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var r1 = Number(document.getElementById('r1').value);
-var r2 = Number(document.getElementById('r2').value);
+var a = Number(document.getElementById('a').value);
+var b = Number(document.getElementById('b').value);
+var c = Number(document.getElementById('c').value);
 
-var result;
-result = 4-((r1/r2)-1)/(-5*Math.pow(10, -4))
-document.getElementById('result').innerHTML = result;
+var result1 =2 * Math.sqrt(10*b*a*c/(Math.PI*2*Math.pow(10, 8)))/10;
+
+var result2 =  Math.pow(10, -10) * 2.65*4*a/((result1/2)*(result1/2)*Math.PI);
+
+document.getElementById('result1').innerHTML = result1;
+document.getElementById('result2').innerHTML = result2;
 
       }
     </script>
