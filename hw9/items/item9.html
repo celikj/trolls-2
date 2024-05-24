@@ -1,0 +1,94 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw8 item9</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw8 item9</h1>
+      <div class="inputs ">
+        <h3>Inputs</h3>
+  
+  <div class="input">
+    <input id="g" placeholder="_-g" type="text">
+  </div>
+  <div class="input">
+  <input id="mc" placeholder="_mC" type="text">
+  </div>
+  <div class="input">
+    <input id="spe" placeholder="speed m/s" type="text">
+  </div>
+  <div class="input">
+    <input id="l" placeholder="length cm" type="text">
+  </div>
+  <div class="input">
+  <input id="i" placeholder="current A" type="text">
+  </div>
+  
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
+
+      <div class="answers ">
+        <h3>Answers</h3>
+
+<div>
+  PART A:
+  <span id="result"></span>
+</div>
+
+      </div>
+    </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item8.html">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item10.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+var g = Number(document.getElementById('g').value);
+var mc = Number(document.getElementById('mc').value);
+var spe = Number(document.getElementById('spe').value);
+var l = Number(document.getElementById('l').value);
+var i = Number(document.getElementById('i').value);
+
+var B = 4*Math.PI * Math.pow(10, -7)*i/(2*Math.PI*l*Math.pow(10, -2));
+var f= B*mc*spe*Math.pow(10, -2);
+var a = f/(g*Math.pow(10, -2));
+var result = a/9.81;
+
+document.getElementById('result').innerHTML = result;
+
+      }
+    </script>
+  </body>
+
+</html>
