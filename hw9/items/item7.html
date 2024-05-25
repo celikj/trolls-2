@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Trolls2 hw8 item7</title>
+    <title>Trolls2 hw9 item7</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -25,46 +25,38 @@
      
   </head>
 
-  <body>
-    <div class="container">
-      <h1>trolls2 hw8 item7</h1>
+  <div class="container">
+    <h1>trolls2 hw9 item7</h1>
 
-      <div class="answers ">
-        <h3>Answers</h3>
+    <div class="screenshots hidden">
 
-
-<div>
-    PART A: 
-    <div class="screenshots">
-      <img class="img"
-      src="images/image.png">
     </div>
-</div>
-<div>
-  PART B: 
-  <div class="screenshots">
-    <img class="img"
-    src="images/image2.png">
-  </div>
-<div>
-  PART C: 
-  <div class="screenshots">
-    <img class="img"
-    src="images/image3">
-  </div>
-<div>
-    PART D:
-    0 
-</div>
-</div>
 
-</div>
+    <div class="inputs ">
+      <h3>Inputs</h3>
 
-      </div>
+<div class="input">
+  <input id="N" placeholder="turn" type="text">
+</div>
+  <div class="input">
+    <input id="v0" placeholder="v0" type="text">
     </div>
+
+      <button class="calculate-button " onclick="calculate()">Calculate</button>
+    </div>
+
+    <div class="answers ">
+      <h3>Answers</h3>
+
+<div>
+  PART A:
+  <span id="result"></span>
+</div>
+    </div>
+  </div>
 
     <div class="buttons ">
-      <a class="button-previous" href="item6.html">Previous</a>
+      <a class="button-previous" href="item6.html"></a>
       <a class="button-middle" href="../menu.html">Items</a>
       <a class="button-next" href="item8.html">Next</a>
     </div>
@@ -74,6 +66,18 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+var N = Number(document.getElementById('N').value);
+var v0 = Number(document.getElementById('v0').value);
+
+var result = 12*10*v0/(N*170);
+
+
+document.getElementById('result').innerHTML = result;
+
+      }
+    </script>
   </body>
 
 </html>

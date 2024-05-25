@@ -2,14 +2,14 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Trolls2 hw8 item1</title>
+    <title>Trolls2 hw9 item1</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="../../css/style.css" rel="stylesheet"/>
-    
-    
+
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
     <script>
@@ -25,34 +25,48 @@
      
   </head>
 
-  <body>
-    <div class="container">
-      <h1>trolls2 hw8 item1</h1>
+  <div class="container">
+    <h1>trolls2 hw9 item1</h1>
 
-      <div class="answers ">
-        <h3>Answers</h3>
+    <div class="screenshots hidden">
 
-<div>
-  PART A: &amp;mu;@Sub{0}@DIV{ja@Sup{2};2r}@HAT{&amp;theta;}
-  <div class="screenshots">
-    <img class="img"
-    src="images/item1A.png">
-  </div>
-</div>
-<div>
-  PART B: &amp;mu;@Sub{0}@DIV{jr;2}@HAT{&amp;theta;}
-  <div class="screenshots">
-    <img class="img"
-    src="images/item1B.png">
-  </div>
-</div>
-
-
-      </div>
     </div>
 
+    <div class="inputs ">
+      <h3>Inputs</h3>
+
+<div class="input">
+  <input id="cir" placeholder="circumference(cm)" type="text">
+</div>
+<div class="input">
+<input id="drate" placeholder="decrease rate(cm/s)" type="text">
+</div>
+<div class="input">
+  <input id="mfield" placeholder="magnetic field" type="text">
+  </div>
+  <div class="input">
+    <input id="t" placeholder="time" type="text">
+    </div>
+
+      <button class="calculate-button " onclick="calculate()">Calculate</button>
+    </div>
+
+    <div class="answers ">
+      <h3>Answers</h3>
+
+<div>
+  PART A:
+  <span id="result"></span>
+</div>
+<div>
+  PART B:
+  clockwise
+</div>
+    </div>
+  </div>
+
     <div class="buttons ">
-      <a></a>
+      <a class="button-previous" href=""></a>
       <a class="button-middle" href="../menu.html">Items</a>
       <a class="button-next" href="item2.html">Next</a>
     </div>
@@ -62,6 +76,20 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+var cir = Number(document.getElementById('cir').value);
+var drate = Number(document.getElementById('drate').value);
+var mfield = Number(document.getElementById('mfield').value);
+var t = Number(document.getElementById('t').value);
+
+var result = mfield*(cir-drate*t)*drate*Math.pow(10,-4)/(2*Math.PI);
+
+
+document.getElementById('result').innerHTML = result;
+
+      }
+    </script>
   </body>
 
 </html>

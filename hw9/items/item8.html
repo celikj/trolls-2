@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Trolls2 hw6 item8</title>
+    <title>Trolls2 hw9 item8</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -27,47 +27,30 @@
 
   <body>
     <div class="container">
-      <h1>trolls2 hw8 item8</h1>
+      <h1>trolls2 hw9 item8</h1>
 
-
-      <div class="inputs ">
-        <h3>Inputs</h3>
-  
-  <div class="input">
-    <input id="i" placeholder="current i_1" type="text">
-  </div>
-  
-    
-
-        <button class="calculate-button " onclick="calculate()">Calculate</button>
-      </div>
       <div class="answers ">
         <h3>Answers</h3>
 
 <div>
-  PART A:
-  <span id="result1"></span>
+    PART A:
+    -6.6+1.1475t@Sup{2}
+    <div class="screenshots">
+      <img class="img"
+      src="images/image1.png">
+    </div>
 </div>
 <div>
   PART B:
-  to the right
+  -5.4525
+
 </div>
 <div>
   PART C:
-  no
+  13.6419
 </div>
-<div>
-  PART D:
-  <span id="result2"></span>
-</div>
-<div>
-  PART E:
-  to the left
-</div>
-<div>
-  PART E:
-  yes
-</div>
+
+
       </div>
     </div>
 
@@ -82,18 +65,6 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
-    <script>
-      function calculate() {
-var i = Number(document.getElementById('i').value);
-
-
-var result1 =8900*9.80*Math.PI*Math.PI*0.05*Math.pow(10,-6)/(2*(4*Math.PI*Math.pow(10,-7)*i));
-result1 = Number(result1.toPrecision(2));
-document.getElementById('result1').innerHTML = result1;
-document.getElementById('result2').innerHTML = result1;
-
-      }
-    </script>
   </body>
 
 </html>
