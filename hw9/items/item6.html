@@ -2,13 +2,13 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Trolls2 hw8 item6</title>
+    <title>Trolls2 hw9 item6</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="../../css/style.css" rel="stylesheet"/>
-    
+
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
@@ -25,41 +25,41 @@
      
   </head>
 
-  <body>
-    <div class="container">
-      <h1>trolls2 hw8 item6</h1>
+  <div class="container">
+    <h1>trolls2 hw9 item6</h1>
 
-      <div class="answers ">
-        <h3>Answers</h3>
+    <div class="screenshots hidden">
+
+    </div>
+
+    <div class="inputs ">
+      <h3>Inputs</h3>
+
+<div class="input">
+  <input id="B" placeholder="magnetic field" type="text">
+</div>
+<div class="input">
+<input id="R" placeholder="resistance" type="text">
+</div>
+<div class="input">
+  <input id="v" placeholder="velocity" type="text">
+  </div>
+
+      <button class="calculate-button " onclick="calculate()">Calculate</button>
+    </div>
+
+    <div class="answers ">
+      <h3>Answers</h3>
 
 <div>
   PART A:
-  q@Sub{1}@DIV{q@Sub{2};4&amp;pi;&amp;epsi;@Sub{0}2d@Sup{2}}
-  <div class="screenshots">
-    <img class="img"
-    src="images/image4.png">
-  </div>
+  <span id="result"></span>
 </div>
-
-<div>
-  PART B:
-  q@Sub{1}q@Sub{2}v@Sup{2}@DIV{&amp;mu;@Sub{0};4&amp;pi;2@RT{2}d@Sup{2}}
-  <div class="screenshots">
-    <img class="img"
-    src="images/item6B.png">
-  </div>
-</div>
-<div>
-  PART C:
-  The magnitude of the electric force is greater than the magnitude of the magnetic force.
-  
-</div>
-
-      </div>
     </div>
+  </div>
 
     <div class="buttons ">
-      <a class="button-previous" href="item5.html">Previous</a>
+      <a class="button-previous" href="item5.html"></a>
       <a class="button-middle" href="../menu.html">Items</a>
       <a class="button-next" href="item7.html">Next</a>
     </div>
@@ -69,9 +69,19 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+var B = Number(document.getElementById('B').value);
+var R = Number(document.getElementById('R').value);
+var v = Number(document.getElementById('v').value);
+
+var result = B*B*v*0.35*0.35/R;
 
 
-    
+document.getElementById('result').innerHTML = result;
+
+      }
+    </script>
   </body>
 
 </html>

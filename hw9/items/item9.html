@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Trolls2 hw8 item9</title>
+    <title>Trolls2 hw9 item9</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -25,44 +25,45 @@
      
   </head>
 
-  <body>
-    <div class="container">
-      <h1>trolls2 hw8 item9</h1>
-      <div class="inputs ">
-        <h3>Inputs</h3>
-  
-  <div class="input">
-    <input id="g" placeholder="_-g" type="text">
-  </div>
-  <div class="input">
-  <input id="mc" placeholder="_mC" type="text">
-  </div>
-  <div class="input">
-    <input id="spe" placeholder="speed m/s" type="text">
-  </div>
-  <div class="input">
-    <input id="l" placeholder="length cm" type="text">
-  </div>
-  <div class="input">
-  <input id="i" placeholder="current A" type="text">
-  </div>
-  
-        <button class="calculate-button " onclick="calculate()">Calculate</button>
-      </div>
+  <div class="container">
+    <h1>trolls2 hw9 item9</h1>
 
-      <div class="answers ">
-        <h3>Answers</h3>
+    <div class="screenshots hidden">
+
+    </div>
+
+    <div class="inputs ">
+      <h3>Inputs</h3>
+
+<div class="input">
+  <input id="B" placeholder="magnetic field" type="text">
+</div>
+<div class="input">
+<input id="A" placeholder="area" type="text">
+</div>
+<div class="input">
+  <input id="rate" placeholder="increase rate" type="text">
+  </div>
+
+      <button class="calculate-button " onclick="calculate()">Calculate</button>
+    </div>
+
+    <div class="answers ">
+      <h3>Answers</h3>
 
 <div>
   PART A:
   <span id="result"></span>
 </div>
-
-      </div>
+<div>
+  PART B:
+  <span id="result2"></span>
+</div>
     </div>
+  </div>
 
     <div class="buttons ">
-      <a class="button-previous" href="item8.html">Previous</a>
+      <a class="button-previous" href="item8.html"></a>
       <a class="button-middle" href="../menu.html">Items</a>
       <a class="button-next" href="item10.html">Next</a>
     </div>
@@ -74,18 +75,18 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var g = Number(document.getElementById('g').value);
-var mc = Number(document.getElementById('mc').value);
-var spe = Number(document.getElementById('spe').value);
-var l = Number(document.getElementById('l').value);
-var i = Number(document.getElementById('i').value);
+var B = Number(document.getElementById('B').value);
+var A = Number(document.getElementById('A').value);
+var rate = Number(document.getElementById('rate').value);
 
-var B = 4*Math.PI * Math.pow(10, -7)*i/(2*Math.PI*l*Math.pow(10, -2));
-var f= B*mc*spe*Math.pow(10, -2);
-var a = f/(g*Math.pow(10, -2));
-var result = a/9.81;
+
+var result = B*Math.pow(A/Math.PI,1/2)*2*Math.PI*rate*Math.pow(10,1);
+var result2= B*(Math.pow(A/Math.PI,1/2)+rate*Math.pow(10,-2))*2*Math.PI*rate*Math.pow(10,1);
+
 
 document.getElementById('result').innerHTML = result;
+document.getElementById('result2').innerHTML = result2;
+
 
       }
     </script>
