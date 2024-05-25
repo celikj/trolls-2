@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Trolls2 hw9 item10</title>
+    <title>Trolls2 hw9 item13</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -27,35 +27,29 @@
 
   <body>
     <div class="container">
-      <h1>trolls2 hw9 item10</h1>
+      <h1>trolls2 hw9 item13</h1>
       <div class="screenshots hidden">
 
       </div>
   
       <div class="inputs ">
         <h3>Inputs</h3>
-
-  <div class="input">
-    <input id="v" placeholder="rod speed" type="text">
-  </div>
   
   <div class="input">
-    <input id="r" placeholder="rod resistance (ohm)" type="text">
-  </div>
-  
-  <div class="input">
-    <input id="l" placeholder="rail seperation l" type="text">
+    <input id="ohm1" placeholder="resistance1" type="text">
   </div>
 
   <div class="input">
-    <input id="B" placeholder="magnetic field" type="text">
+    <input id="ohm2" placeholder="resistance2" type="text">
   </div>
 
   <div class="input">
-    <input id="u" placeholder="U shaped resistance" type="text">
+    <input id="V1" placeholder="V1" type="text">
   </div>
-  
 
+  <div class="input">
+    <input id="V2" placeholder="V2" type="text">
+  </div>
     
 
         <button class="calculate-button " onclick="calculate()">Calculate</button>
@@ -65,17 +59,12 @@
 
 <div>
   PART A:
-  <span id="result1"></span>
+  <div id="result1"></div>
 </div>
 
 <div>
   PART B:
-  <span id="result2"></span>
-</div>
-
-<div>
-  PART C:
-  <span id="result3"></span>
+  <div id="result2"></div>
 </div>
 
 
@@ -98,20 +87,18 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var v = Number(document.getElementById('v').value);
-var r = Number(document.getElementById('r').value);
-var l = Number(document.getElementById('l').value);
-var b = Number(document.getElementById('B').value);
-var U = Number(document.getElementById('u').value);
+var r1 = Number(document.getElementById('ohm1').value);
+var r2 = Number(document.getElementById('ohm2').value);
+var v1 = Number(document.getElementById('V1').value);
+var v2 = Number(document.getElementById('V2').value);
 
 
-var result1 = v*b*l/100;
-var result2 = result1/(U + r);
-var result3 = result2*l*b/100;
+var result1 =(v2/r1) + (v2/r2);
+var result2 = (v2-v1)/r2 + v2/r1;
 
-document.getElementById('result1').innerHTML = Math.round(result1 * 100000000000) / 100000000000;
-document.getElementById('result2').innerHTML = Math.round(result2 * 100000000000) / 100000000000;
-document.getElementById('result3').innerHTML = Math.round(result3 * 100000000000) / 100000000000;
+document.getElementById('result1').innerHTML = result1 + " A";
+document.getElementById('result2').innerHTML = result2 + " A";
+
 
       }
     </script>
