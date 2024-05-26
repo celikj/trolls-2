@@ -1,0 +1,111 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw9 item4</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <div class="container">
+    <h1>trolls2 hw9 item4</h1>
+    <div class="screenshots hidden">
+
+    </div>
+
+    <div class="inputs ">
+      <h3>Inputs</h3>
+
+
+<div class="input">
+  <input id="l" placeholder="length(cm)" type="text">
+</div>
+<div class="input">
+<input id="B" placeholder="magnetic field" type="text">
+</div>
+<div class="input">
+  <input id="v" placeholder="speed(m/s)" type="text">
+  </div>
+
+      <button class="calculate-button " onclick="calculate()">Calculate</button>
+    </div>
+    <div class="answers ">
+      <h3>Answers</h3>
+
+<div>
+  PART A:
+  b
+  </div>
+  <div>
+    PART B:
+    from b toward a
+    </div>
+    <div>
+      PART C:
+      <span id="result"></span>
+      </div>
+      <div>
+        PART D:
+        b
+        </div>
+        <div>
+          PART E:
+          <span id="result2"></span>
+          </div>
+          <div>
+            PART F:
+            <span id="result3"></span>
+            </div>
+
+</div>
+
+    </div>
+  </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item3.html">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item5.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+    
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+    function calculate() {
+      var l = Number(document.getElementById('l').value);
+      var B = Number(document.getElementById('B').value);
+      var v = Number(document.getElementById('v').value);
+      result=B*v;
+      result2=B*v*l*Math.pow(10,-2);
+      result3=result2;
+      document.getElementById('result').innerHTML = result;
+      document.getElementById('result2').innerHTML = result2;
+      document.getElementById('result3').innerHTML = result3;
+      
+    }
+  </script>
+  </body>
+
+</html>
