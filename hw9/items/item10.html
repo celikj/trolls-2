@@ -98,23 +98,31 @@
 
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
-      function calculate() {
-var v = Number(document.getElementById('v').value);
-var r = Number(document.getElementById('r').value);
-var l = Number(document.getElementById('l').value);
-var b = Number(document.getElementById('B').value);
-var U = Number(document.getElementById('u').value);
+function toScientific(num) {
+    var sign = (num < 0) ? "-" : "";
+    var coefficient = Number(Math.abs(num).toExponential().split("e")[0]).toFixed(2);
+    var exponent = Math.abs(num).toExponential().split("e")[1];
+    return sign + coefficient + " * 10^" + exponent;
+}
 
+function calculate() {
+    var v = Number(document.getElementById('v').value);
+    var r = Number(document.getElementById('r').value);
+    var l = Number(document.getElementById('l').value);
+    var b = Number(document.getElementById('B').value);
+    var U = Number(document.getElementById('u').value);
 
-var result1 = v*b*l/100;
-var result2 = result1/(U + r);
-var result3 = result2*l*b/100;
+    var result1 = v*b*l/100;
+    var result2 = result1/(U + r);
+    var result3 = result2*l*b/100;
 
-document.getElementById('result1').innerHTML = Math.round(result1 * 100000000000) / 100000000000;
-document.getElementById('result2').innerHTML = Math.round(result2 * 100000000000) / 100000000000;
-document.getElementById('result3').innerHTML = Math.round(result3 * 100000000000) / 100000000000;
+    var r2Exp = toScientific(result2);
+    var r3Exp = toScientific(result3);
 
-      }
+    document.getElementById('result1').innerHTML = result1.toFixed(2);
+    document.getElementById('result2').innerHTML = r2Exp;
+    document.getElementById('result3').innerHTML = r3Exp;
+}
     </script>
   </body>
 
