@@ -1,0 +1,102 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw10 item3</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <div class="container">
+    <h1>trolls2 hw10 item3</h1>
+
+    <div class="screenshots hidden">
+
+    </div>
+
+    <div class="inputs ">
+      <h3>Inputs</h3>
+
+<div class="input">
+  <input id="n" placeholder="turns" type="text">
+</div>
+<div class="input">
+<input id="area" placeholder="area(cm^2)" type="text">
+</div>
+<div class="input">
+  <input id="t" placeholder="time interval(_x10^-2 s)" type="text">
+  </div>
+  <div class="input">
+    <input id="mfield" placeholder="magnetic field(_x10^-5)" type="text">
+    </div>
+
+      <button class="calculate-button " onclick="calculate()">Calculate</button>
+    </div>
+
+    <div class="answers ">
+      <h3>Answers</h3>
+
+<div>
+  PART A:
+  <span id="result"></span>
+</div>
+<div>
+  PART B:
+  0
+</div>
+<div>
+  PART C:
+  <span id="result2"></span>
+</div>
+    </div>
+  </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item2.html ">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item4.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+var n = Number(document.getElementById('n').value);
+var area = Number(document.getElementById('area').value);
+var t = Number(document.getElementById('t').value);
+var mfield = Number(document.getElementById('mfield').value);
+
+var result = mfield*area*Math.pow(10,-9);
+var result2 = result*n*Math.pow(10,2)/t;
+var resultExp = result.toExponential();
+var resultReplace = resultExp.replace(/e\+?/, ' * 10^');
+document.getElementById('result').innerHTML = resultReplace;
+document.getElementById('result2').innerHTML = result2;
+
+
+      }
+    </script>
+  </body>
+
+</html>

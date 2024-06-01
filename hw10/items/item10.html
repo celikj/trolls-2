@@ -1,0 +1,126 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw10 item10</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+    
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw10 item10</h1>
+      <div class="screenshots hidden">
+
+      </div>
+  
+      <div class="inputs ">
+        <h3>Inputs</h3>
+
+  <div class="input">
+    <input id="v" placeholder="rod speed" type="text">
+  </div>
+  
+  <div class="input">
+    <input id="r" placeholder="rod resistance (ohm)" type="text">
+  </div>
+  
+  <div class="input">
+    <input id="l" placeholder="rail seperation l" type="text">
+  </div>
+
+  <div class="input">
+    <input id="B" placeholder="magnetic field" type="text">
+  </div>
+
+  <div class="input">
+    <input id="u" placeholder="U shaped resistance" type="text">
+  </div>
+  
+
+    
+
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
+      <div class="answers ">
+        <h3>Answers</h3>
+
+<div>
+  PART A:
+  <span id="result1"></span>
+</div>
+
+<div>
+  PART B:
+  <span id="result2"></span>
+</div>
+
+<div>
+  PART C:
+  <span id="result3"></span>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item9.html">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item11.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+function toScientific(num) {
+    var sign = (num < 0) ? "-" : "";
+    var coefficient = Number(Math.abs(num).toExponential().split("e")[0]).toFixed(2);
+    var exponent = Math.abs(num).toExponential().split("e")[1];
+    return sign + coefficient + " * 10^" + exponent;
+}
+
+function calculate() {
+    var v = Number(document.getElementById('v').value);
+    var r = Number(document.getElementById('r').value);
+    var l = Number(document.getElementById('l').value);
+    var b = Number(document.getElementById('B').value);
+    var U = Number(document.getElementById('u').value);
+
+    var result1 = v*b*l/100;
+    var result2 = result1/(U + r);
+    var result3 = result2*l*b/100;
+
+    var r2Exp = toScientific(result2);
+    var r3Exp = toScientific(result3);
+
+    document.getElementById('result1').innerHTML = result1.toFixed(2);
+    document.getElementById('result2').innerHTML = r2Exp;
+    document.getElementById('result3').innerHTML = r3Exp;
+}
+    </script>
+  </body>
+
+</html>
