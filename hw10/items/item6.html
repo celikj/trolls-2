@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Trolls2 hw10 item6</title>
+    <title>Trolls2 hw9 item6</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -26,7 +26,7 @@
   </head>
 
   <div class="container">
-    <h1>trolls2 hw10 item6</h1>
+    <h1>trolls2 hw9 item6</h1>
 
     <div class="screenshots hidden">
 
@@ -36,13 +36,13 @@
       <h3>Inputs</h3>
 
 <div class="input">
-  <input id="B" placeholder="magnetic field" type="text">
+  <input id="t" placeholder="turn" type="text">
 </div>
 <div class="input">
-<input id="R" placeholder="resistance" type="text">
+<input id="d" placeholder="diameter" type="text">
 </div>
 <div class="input">
-  <input id="v" placeholder="velocity" type="text">
+  <input id="l" placeholder="length" type="text">
   </div>
 
       <button class="calculate-button " onclick="calculate()">Calculate</button>
@@ -54,6 +54,10 @@
 <div>
   PART A:
   <span id="result"></span>
+</div>
+<div>
+  PART B:
+  <span id="result2"></span>
 </div>
     </div>
   </div>
@@ -71,14 +75,15 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var B = Number(document.getElementById('B').value);
-var R = Number(document.getElementById('R').value);
-var v = Number(document.getElementById('v').value);
+var t = Number(document.getElementById('t').value);
+var d = Number(document.getElementById('d').value);
+var l = Number(document.getElementById('l').value);
 
-var result = B*B*v*0.35*0.35/R;
+var result = 1256*Math.pow(10,-6)*t*t*Math.PI*(d*d/4)/l/100000;
+var result2 = 4*result*l/(d*d*Math.PI*Math.PI*1200*4*Math.pow(10,-7))*100;
 
-
-document.getElementById('result').innerHTML = result;
+document.getElementById('result').innerHTML = result + " H";
+document.getElementById('result2').innerHTML = Math.pow(result2,0.5);;
 
       }
     </script>

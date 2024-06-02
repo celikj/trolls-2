@@ -36,25 +36,8 @@
         <h3>Inputs</h3>
 
   <div class="input">
-    <input id="v" placeholder="rod speed" type="text">
+    <input id="v" placeholder="voltage" type="text">
   </div>
-  
-  <div class="input">
-    <input id="r" placeholder="rod resistance (ohm)" type="text">
-  </div>
-  
-  <div class="input">
-    <input id="l" placeholder="rail seperation l" type="text">
-  </div>
-
-  <div class="input">
-    <input id="B" placeholder="magnetic field" type="text">
-  </div>
-
-  <div class="input">
-    <input id="u" placeholder="U shaped resistance" type="text">
-  </div>
-  
 
     
 
@@ -65,29 +48,38 @@
 
 <div>
   PART A:
-  <span id="result1"></span>
+  exp(-@DIV{tR;L})V
 </div>
 
 <div>
   PART B:
-  <span id="result2"></span>
+  0
 </div>
 
 <div>
   PART C:
-  <span id="result3"></span>
+  <span id="result"></span>
 </div>
 
 
       </div>
 
     </div>
+    <div class="extra-content" style="text-align: center; margin-top: 20px;">
+      <h3>hosgeldin José Mourinho</h3>
+      <p>bb pearson</p>
+      <video width="576" height="576" controls>
+        <source src="images/copy_0976E8D5-2B60-4A0A-B4DD-26C9D8B3DA84.mov" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
     <div class="buttons ">
       <a class="button-previous" href="item9.html">Previous</a>
       <a class="button-middle" href="../menu.html">Items</a>
-      <a class="button-next" href="item11.html">Next</a>
+      <a class="button-next"></a>
     </div>
+
 
     <div class="footer">
         trolls2
@@ -95,30 +87,11 @@
 
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
-function toScientific(num) {
-    var sign = (num < 0) ? "-" : "";
-    var coefficient = Number(Math.abs(num).toExponential().split("e")[0]).toFixed(2);
-    var exponent = Math.abs(num).toExponential().split("e")[1];
-    return sign + coefficient + " * 10^" + exponent;
-}
 
 function calculate() {
     var v = Number(document.getElementById('v').value);
-    var r = Number(document.getElementById('r').value);
-    var l = Number(document.getElementById('l').value);
-    var b = Number(document.getElementById('B').value);
-    var U = Number(document.getElementById('u').value);
 
-    var result1 = v*b*l/100;
-    var result2 = result1/(U + r);
-    var result3 = result2*l*b/100;
-
-    var r2Exp = toScientific(result2);
-    var r3Exp = toScientific(result3);
-
-    document.getElementById('result1').innerHTML = result1.toFixed(2);
-    document.getElementById('result2').innerHTML = r2Exp;
-    document.getElementById('result3').innerHTML = r3Exp;
+    document.getElementById('result').innerHTML = v ;
 }
     </script>
   </body>

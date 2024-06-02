@@ -36,14 +36,11 @@
       <h3>Inputs</h3>
 
 <div class="input">
-  <input id="B" placeholder="magnetic field" type="text">
+  <input id="r" placeholder="resistance" type="text">
 </div>
 <div class="input">
-<input id="A" placeholder="area" type="text">
+<input id="v0" placeholder="v0" type="text">
 </div>
-<div class="input">
-  <input id="rate" placeholder="increase rate" type="text">
-  </div>
 
       <button class="calculate-button " onclick="calculate()">Calculate</button>
     </div>
@@ -75,17 +72,16 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var B = Number(document.getElementById('B').value);
-var A = Number(document.getElementById('A').value);
-var rate = Number(document.getElementById('rate').value);
+var v0 = Number(document.getElementById('v0').value);
+var r = Number(document.getElementById('r').value);
 
 
-var result = B*Math.pow(A/Math.PI,1/2)*2*Math.PI*rate*Math.pow(10,1);
-var result2= B*(Math.pow(A/Math.PI,1/2)+rate*Math.pow(10,-2))*2*Math.PI*rate*Math.pow(10,1);
+var result = 2*r;
+var result2= 2*v0;
 
 
-document.getElementById('result').innerHTML = result;
-document.getElementById('result2').innerHTML = result2;
+document.getElementById('result').innerHTML = result + " choose ohm from symbols";
+document.getElementById('result2').innerHTML = result2+ " V";
 
 
       }

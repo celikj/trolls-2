@@ -36,11 +36,14 @@
       <h3>Inputs</h3>
 
 <div class="input">
-  <input id="N" placeholder="turn" type="text">
+  <input id="l" placeholder="length" type="text">
 </div>
-  <div class="input">
-    <input id="v0" placeholder="v0" type="text">
-    </div>
+<div class="input">
+  <input id="dia" placeholder="v0" type="text">
+</div>
+<div class="input">
+  <input id="m" placeholder="mfield (T)" type="text">
+</div>
 
       <button class="calculate-button " onclick="calculate()">Calculate</button>
     </div>
@@ -51,10 +54,6 @@
 <div>
   PART A:
   <span id="result"></span>
-</div>
-<div>
-  PART B:
-yes
 </div>
 
     </div>
@@ -73,10 +72,11 @@ yes
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var N = Number(document.getElementById('N').value);
-var v0 = Number(document.getElementById('v0').value);
+var l = Number(document.getElementById('l').value);
+var dia = Number(document.getElementById('dia').value);
+var m = Number(document.getElementById('m').value);
 
-var result = 12*10*v0/(N*170);
+var result = m*m*Math.PI*(dia*dia/4)*l/(2*1256*Math.pow(10,-6))/1000;
 
 
 document.getElementById('result').innerHTML = result;

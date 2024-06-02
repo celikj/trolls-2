@@ -31,42 +31,13 @@
 
     </div>
 
-    <div class="inputs ">
-      <h3>Inputs</h3>
-
-<div class="input">
-  <input id="n" placeholder="loop" type="text">
-</div>
-<div class="input">
-<input id="b1" placeholder="magnetic flux (_t)" type="text">
-</div>
-<div class="input">
-  <input id="b2" placeholder="magnetic flux (-_t^3)" type="text">
-  </div>
-  <div class="input">
-    <input id="t1" placeholder="time(part B)" type="text">
-    </div>
-    <div class="input">
-      <input id="t2" placeholder="time(part C)" type="text">
-      </div>
-
-      <button class="calculate-button " onclick="calculate()">Calculate</button>
-    </div>
 
     <div class="answers ">
       <h3>Answers</h3>
 
 <div>
   PART A: 
-  <span id="result"></span>
-</div>
-<div>
-  PART B:
-  <span id="result3"></span>
-</div>
-<div>
-  PART C:
-  <span id="result4"></span>
+  @DIV{&amp;mu;@Sub{0}I@Sup{2};4&amp;pi;}ln(@DIV{r@Sub{2};r@Sub{1}})
 </div>
     </div>
   </div>
@@ -82,28 +53,6 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
-    <script>
-      function calculate() {
-var n = Number(document.getElementById('n').value);
-var b1 = Number(document.getElementById('b1').value);
-var b2 = Number(document.getElementById('b2').value);
-var t1 = Number(document.getElementById('t1').value);
-var t2 = Number(document.getElementById('t2').value);
-
-
-var result = -b1*n/100;
-var result2= b2*3*n/100;
-var result3 = (result2*t1*t1)+result;
-var result4 = (result2*t2*t2)+result;
-var rounded = result4.toFixed(4);
-
-document.getElementById('result').innerHTML = result + "+" + result2 + "t^2";
-document.getElementById('result3').innerHTML = result3;
-document.getElementById('result4').innerHTML = rounded;
-
-
-      }
-    </script>
   </body>
 
 </html>
