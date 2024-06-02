@@ -1,0 +1,92 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw9 item6</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <div class="container">
+    <h1>trolls2 hw9 item6</h1>
+
+    <div class="screenshots hidden">
+
+    </div>
+
+    <div class="inputs ">
+      <h3>Inputs</h3>
+
+<div class="input">
+  <input id="t" placeholder="turn" type="text">
+</div>
+<div class="input">
+<input id="d" placeholder="diameter" type="text">
+</div>
+<div class="input">
+  <input id="l" placeholder="length" type="text">
+  </div>
+
+      <button class="calculate-button " onclick="calculate()">Calculate</button>
+    </div>
+
+    <div class="answers ">
+      <h3>Answers</h3>
+
+<div>
+  PART A:
+  <span id="result"></span>
+</div>
+<div>
+  PART B:
+  <span id="result2"></span>
+</div>
+    </div>
+  </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item5.html ">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item7.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+var t = Number(document.getElementById('t').value);
+var d = Number(document.getElementById('d').value);
+var l = Number(document.getElementById('l').value);
+
+var result = 1256*Math.pow(10,-6)*t*t*Math.PI*(d*d/4)/l/100000;
+var result2 = 4*result*l/(d*d*Math.PI*Math.PI*1200*4*Math.pow(10,-7))*100;
+
+document.getElementById('result').innerHTML = result + " H";
+document.getElementById('result2').innerHTML = Math.pow(result2,0.5);;
+
+      }
+    </script>
+  </body>
+
+</html>

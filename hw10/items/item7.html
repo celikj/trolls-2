@@ -1,0 +1,88 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw10 item7</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <div class="container">
+    <h1>trolls2 hw10 item7</h1>
+
+    <div class="screenshots hidden">
+
+    </div>
+
+    <div class="inputs ">
+      <h3>Inputs</h3>
+
+<div class="input">
+  <input id="l" placeholder="length" type="text">
+</div>
+<div class="input">
+  <input id="dia" placeholder="v0" type="text">
+</div>
+<div class="input">
+  <input id="m" placeholder="mfield (T)" type="text">
+</div>
+
+      <button class="calculate-button " onclick="calculate()">Calculate</button>
+    </div>
+
+    <div class="answers ">
+      <h3>Answers</h3>
+
+<div>
+  PART A:
+  <span id="result"></span>
+</div>
+
+    </div>
+  </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item6.html ">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item8.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+var l = Number(document.getElementById('l').value);
+var dia = Number(document.getElementById('dia').value);
+var m = Number(document.getElementById('m').value);
+
+var result = m*m*Math.PI*(dia*dia/4)*l/(2*1256*Math.pow(10,-6))/1000;
+
+
+document.getElementById('result').innerHTML = result;
+
+      }
+    </script>
+  </body>
+
+</html>
