@@ -28,26 +28,30 @@
       margin-bottom: 20px;
     }
 
-    [data-netlify-identity-button] {
+    .netlify-button {
       padding: 10px 20px;
       background: #0073e6;
       color: #ffffff;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      text-align: center;
-      text-decoration: none;
       font-size: 16px;
+      text-align: center;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .footer {
+      margin-top: 20px;
+      color: #666;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>yunus dosta sevgi ile</h1>
-    <!-- Add a simpler button:
-      Simple button that will open the modal.
-    -->
-    <div data-netlify-identity-button>tikla topis</div>
+    <!-- Simple button that will open the modal -->
+    <div class="netlify-button" data-netlify-identity-button>tikla topis</div>
     <div class="footer">hop hop bursa top bursa</div>
   </div>
 </body>
