@@ -2,20 +2,75 @@
 <html>
 <head>
   <title>yunus dostuma sevgiyle :)</title>
-
   <!-- include the widget -->
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #f2f2f2, #c8e8f4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      background: #ffffff;
+      padding: 50px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    [data-netlify-identity-menu], [data-netlify-identity-button] {
+      display: inline-block;
+      margin: 10px 0;
+    }
+
+    [data-netlify-identity-button] {
+      padding: 10px 20px;
+      background: #0073e6;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    [data-netlify-identity-button]:hover {
+      background: #005bb5;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <!-- Add a menu:
-   Log in / Sign up - when the user is not logged in
-   Username / Log out - when the user is logged in
-  -->
-  <div data-netlify-identity-menu></div>
+  <div class="container">
+    <h1>Welcome to My Page</h1>
+    <!-- Add a menu:
+      Log in / Sign up - when the user is not logged in
+      Username / Log out - when the user is logged in
+    -->
+    <div data-netlify-identity-menu></div>
 
-  <!-- Add a simpler button:
-    Simple button that will open the modal.
-  -->
-  <div data-netlify-identity-button>Login with Netlify Identity</div>
+    <!-- Add a simpler button:
+      Simple button that will open the modal.
+    -->
+    <div data-netlify-identity-button>Login with Netlify Identity</div>
+
+    <div class="footer">
+      yunus dostuma sevgiyle :)
+    </div>
+  </div>
 </body>
 </html>
