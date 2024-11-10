@@ -1,2 +1,2 @@
 # trolls-2
-[trolls2.xyz](https://trolls2.xyz)
+[105.trolls2.xyz](https://105.trolls2.xyz/)
