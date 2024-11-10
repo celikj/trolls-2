@@ -1,85 +1,80 @@
-
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Trolls2 hw5 item4</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="../../css/style.css" rel="stylesheet"/>
-
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link href="../../css/style.css" rel="stylesheet" />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-DEGZT5119E');
+      gtag("config", "G-DEGZT5119E");
     </script>
-
-     
-
-     
   </head>
 
   <body>
     <div class="container">
       <h1>trolls2 hw5 item4</h1>
 
-      <div class="screenshots hidden">
+      <div class="screenshots hidden"></div>
 
-      </div>
-
-      <div class="inputs ">
+      <div class="inputs">
         <h3>Inputs</h3>
 
-<div class="input">
-    <input id="r" placeholder="resistance" type="text">
-</div>
+        <div class="input">
+          <input id="percent" placeholder="weight reduce (%)" type="text" />
+        </div>
 
-        <button class="calculate-button " onclick="calculate()">Calculate</button>
+        <button class="calculate-button" onclick="calculate()">
+          Calculate
+        </button>
       </div>
 
-      <div class="answers ">
+      <div class="answers">
         <h3>Answers</h3>
 
-<div>
-    PART A:
-    <span id="result1"></span>
-</div>
-<div>
-    PART B:
-  <span id="result2"></span>
-</div>
-
+        <div>
+          PART A:
+          <span id="result1"></span> km
+        </div>
       </div>
     </div>
 
-    <div class="buttons ">
+    <div class="buttons">
       <a class="button-previous" href="item3.html">Previous</a>
       <a class="button-middle" href="../menu.html">Items</a>
       <a class="button-next" href="item5.html">Next</a>
     </div>
 
-    <div class="footer">
-        trolls2
-    </div>
+    <div class="footer">trolls2</div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var r = Number(document.getElementById('r').value);
-r = r*Math.pow(10, 3)
-var result1 = (r*169/380)
-var result2 = r-result1
-document.getElementById('result1').innerHTML = result1;
-document.getElementById('result2').innerHTML = result2;
-
+        var percent = Number(document.getElementById("percent").value);
+        var radius = 6.38*Math.pow(10,6);
+        
+        var result1 = (percent/100)*radius/1000;
+        document.getElementById("result1").innerHTML = result1;
       }
     </script>
   </body>
-
 </html>

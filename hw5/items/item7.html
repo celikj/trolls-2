@@ -37,10 +37,16 @@
         <h3>Inputs</h3>
 
 <div class="input">
-    <input id="l" placeholder="length (m)" type="text">
+    <input id="R" placeholder="orbit radius" type="text">
 </div>
 <div class="input">
-  <input id="i" placeholder="current" type="text">
+  <input id="F" placeholder="exerted force on satellite" type="text">
+</div>
+<div class="input">
+  <input id="R2" placeholder="increased orbit radius" type="text">
+</div>
+<div class="input">
+  <input id="T" placeholder="orbit period (h)" type="text">
 </div>
 
         <button class="calculate-button " onclick="calculate()">Calculate</button>
@@ -51,7 +57,11 @@
 
 <div>
     PART A:
-    <span id="result"></span>
+    <span id="result"></span> N
+</div>
+<div>
+  PART B:
+  <span id="result2"></span> kg
 </div>
 
       </div>
@@ -70,12 +80,15 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var l = Number(document.getElementById('l').value);
-var i = Number(document.getElementById('i').value);
-var result = Math.pow(10, -8)*i*i*8*l*1.68*10000/(Math.PI*0.129*0.129);
-var resultExp = result.toExponential();
-var resultReplace = resultExp.replace(/e\+?/, ' * 10^');
+var R = Number(document.getElementById('R').value);
+var F = Number(document.getElementById('F').value);
+var R2 = Number(document.getElementById('R2').value);
+var T = Number(document.getElementById('T').value);
+var G = 6.67*Math.pow(10,-11);
+var result = Math.round(F*(Math.pow(R,2)/Math.pow(R2,2))*10)/10;
+var result2 = Math.round(((Math.pow(Math.PI/(1800*T),2)*Math.pow(R2,3))/G)/Math.pow(10,24))/100 + "*10^26";
 document.getElementById('result').innerHTML = result;
+document.getElementById('result2').innerHTML = result2;
       }
     </script>
   </body>

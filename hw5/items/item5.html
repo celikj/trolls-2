@@ -37,13 +37,10 @@
         <h3>Inputs</h3>
 
 <div class="input">
-    <input id="r1" placeholder="radius 1(mm)" type="text">
+    <input id="mass1" placeholder="known mass" type="text">
 </div>
 <div class="input">
-  <input id="r2" placeholder="radius 2(mm)" type="text">
-</div>
-<div class="input">
-  <input id="l" placeholder="length(cm)" type="text">
+  <input id="mass2" placeholder="elevator mass" type="text">
 </div>
 
         <button class="calculate-button " onclick="calculate()">Calculate</button>
@@ -53,16 +50,14 @@
         <h3>Answers</h3>
 
 <div>
-    PART A: @DIV{&amp;rho;;2&amp;pi;l}ln(@DIV{r@Sub{2};r@Sub{1}})
+    PART A: 
+    <span id="result1"></span>
 </div>
 <div>
   PART B:
-  <span id="result1"></span>
-</div>
-<div>
-  PART C:
   <span id="result2"></span>
 </div>
+
 
       </div>
     </div>
@@ -80,21 +75,16 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var r1 = Number(document.getElementById('r1').value);
-var r2 = Number(document.getElementById('r2').value);
-var l = Number(document.getElementById('l').value);
-
+var mass1 = Number(document.getElementById('mass1').value);
+var mass2 = Number(document.getElementById('mass2').value);
 //
-
-var result1 = ((15*Math.pow(10, -5)/(2*Math.PI*l))*Math.log(r2/r1))*100; 
-var result2 = 15*Math.pow(10, -1)*l/(Math.PI*(r2*r2-(r1*r1)));
-var result1Exp = result1.toExponential();
-var result1Replace = result1Exp.replace(/e\+?/, ' * 10^');
-var result2Exp = result2.toExponential();
-var result2Replace = result2Exp.replace(/e\+?/, ' * 10^');
-document.getElementById('result1').innerHTML = result1Replace;
-document.getElementById('result2').innerHTML = result2Replace;
-
+var result1 = (9.8*(mass2-mass1))/mass1
+var result2;
+if(result1>0){result2 = "Upward"}
+else {result2 = "Downward"}
+result1 = Math.abs(Math.round(result1*100)/100);
+document.getElementById('result1').innerHTML = result1;
+document.getElementById('result2').innerHTML = result2;
       }
     </script>
   </body>

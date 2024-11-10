@@ -33,34 +33,16 @@
 
       </div>
 
-      <div class="inputs ">
-        <h3>Inputs</h3>
-
-<div class="input">
-    <input id="c1" placeholder="concentration 1" type="text">
-</div>
-<div class="input">
-  <input id="s1" placeholder="speed 1" type="text">
-</div>
-<div class="input">
-  <input id="c2" placeholder="concentration 2" type="text">
-</div>
-<div class="input">
-<input id="s2" placeholder="speed 2" type="text">
-</div>
-
-        <button class="calculate-button " onclick="calculate()">Calculate</button>
-      </div>
+      
 
       <div class="answers ">
         <h3>Answers</h3>
 
 <div>
-    PART A:
-    <span id="result"></span>
+    PART A: 3.5*10^41 kg
 </div>
 <div>
-  PART B: north
+  PART B: 1.7*10^11 stars
 </div>
 
       </div>
@@ -77,21 +59,7 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
-    <script>
-      function calculate() {
-var c1 = Number(document.getElementById('c1').value)*Math.pow(10, 12);
-var c2 = Number(document.getElementById('c2').value)*Math.pow(10, 11);
-var s1 = Number(document.getElementById('s1').value)*Math.pow(10, 6);
-var s2 = Number(document.getElementById('s2').value)*Math.pow(10, 6);
-
-//
-
-var result = ((2*c1*s1)+(c2*s2))*1.6*Math.pow(10, -19);
-var resultExp = result.toExponential();
-var resultReplace = resultExp.replace(/e\+?/, ' * 10^');
-document.getElementById('result').innerHTML = result + " (A/m^2)";
-      }
-    </script>
+    
   </body>
 
 </html>

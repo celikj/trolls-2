@@ -37,10 +37,7 @@
         <h3>Inputs</h3>
 
 <div class="input">
-    <input id="l" placeholder="length" type="text">
-</div>
-<div class="input">
-  <input id="i" placeholder="current" type="text">
+    <input id="h" placeholder="height" type="text">
 </div>
 
         <button class="calculate-button " onclick="calculate()">Calculate</button>
@@ -70,13 +67,11 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var l = Number(document.getElementById('l').value);
-var i = Number(document.getElementById('i').value);
 
+var height = Number(document.getElementById('h').value);
+var radius = 6.38*Math.pow(10,6);
 var result;
-result = 1.68*Math.pow(10, -8)*l*i/(Math.PI*Math.pow((1.628/2)*Math.pow(10,-3),2));
-var resultExp = result.toExponential();
-var resultReplace = resultExp.replace(/e\+?/, ' * 10^');
+result = Math.round((1- Math.pow(radius,2)/Math.pow(radius+height,2))*100*10000)/10000;
 document.getElementById('result').innerHTML = result;
 
       }
