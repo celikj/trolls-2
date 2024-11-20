@@ -37,16 +37,16 @@
         <h3>Inputs</h3>
 
 <div class="input">
-    <input id="d1" placeholder="density 1" type="text">
+    <input id="a" placeholder="a" type="text">
 </div>
 <div class="input">
-  <input id="d2" placeholder="density 2" type="text">
+  <input id="b" placeholder="b" type="text">
 </div>
 <div class="input">
-  <input id="i1" placeholder="diameter 1" type="text">
+  <input id="r1" placeholder="x component of r (i)" type="text">
 </div>
 <div class="input">
-  <input id="i2" placeholder="diameter 2" type="text">
+  <input id="r2" placeholder="y component of r (j)" type="text">
 </div>
 
         <button class="calculate-button " onclick="calculate()">Calculate</button>
@@ -58,10 +58,6 @@
 <div>
     PART A:
     <span id="result"></span>
-</div>
-<div>
-    PART B: 
-    <span id="result2"></span>
 </div>
 
       </div>
@@ -80,19 +76,16 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var d1 = Number(document.getElementById('d1').value);
-var d2 = Number(document.getElementById('d2').value);
-var i1 = Number(document.getElementById('i1').value);
-var i2 = Number(document.getElementById('i2').value);
+var a = Number(document.getElementById('a').value);
+var b = Number(document.getElementById('b').value);
+var r1 = Number(document.getElementById('r1').value);
+var r2 = Number(document.getElementById('r2').value);
 
-//
 
-var A1 = Math.PI  * d1*((i1/2)*(i1/2));
-var A2 = Math.PI  * d2*((i2/2)*(i2/2));
-var result = A1 - A2;
-var result2 = -result/((1.5*1.5/4)*Math.PI);
-document.getElementById('result').innerHTML = result;
-document.getElementById('result2').innerHTML = result2;
+
+var res1 = a*Math.pow(r1,2)/2
+var res2 = b*Math.pow(r2,2)/2
+document.getElementById('result').innerHTML = mert(res1 + res2, 2) + " J";
       }
     </script>
   </body>

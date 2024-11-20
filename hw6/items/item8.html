@@ -37,57 +37,35 @@
         <h3>Inputs</h3>
 
 <div class="input">
-    <input id="V" placeholder="voltage V" type="text">
+    <input id="h" placeholder="height(m)" type="text">
 </div>
 <div class="input">
-  <input id="r" placeholder="r" type="text">
+  <input id="crh" placeholder="crater deepness(m)" type="text">
 </div>
 <div class="input">
-  <input id="R" placeholder="R" type="text">
+  <input id="m" placeholder="pilot's mass(kg)" type="text">
+</div>
+<div class="input">
+  <input id="v" placeholder="terminal velocity(m/s)" type="text">
 </div>
 
         <button class="calculate-button " onclick="calculate()">Calculate</button>
       </div>
 
       <div class="answers ">
-        <h3>Answers</h3>
-     
+        <h3>Answers</h3>      
+
 <div>
   PART A:
-  left decreases.
+  <span id="result1"></span>
 </div>
 <div>
   PART B:
-  middle increases.
-</div>
-<div>
-  PART C:
-  right goes to 0.
-</div>
-<div>
-  PART D:
-  left decreases.
-</div>
-<div>
-  PART E:
-  middle increases
-</div>
-<div>
-  PART F:
-  right goes to 0.
-</div>
-<div>
-  PART G:
-  The terminal voltage increases.
-</div>        
-
-<div>
-  PART H:
   <span id="result2"></span>
 </div>
 <div>
-  PART I:
-  <span id="result"></span>
+  PART C:
+  <span id="result3"></span>
 </div>
 
 
@@ -107,16 +85,17 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var V = Number(document.getElementById('V').value);
-var R = Number(document.getElementById('R').value);
-var r = Number(document.getElementById('r').value);
+var h = Number(document.getElementById('h').value);
+var crh = Number(document.getElementById('crh').value);
+var m = Number(document.getElementById('m').value);
+var v = Number(document.getElementById('v').value);
+var g = 9.8;
 
-//
+var res =-m*v*v/2 - m*g*crh;
+  document.getElementById('result1').innerHTML = selim(res, 3) +" J";
+  document.getElementById('result2').innerHTML = selim(-res/crh, 3) +" N";
+  document.getElementById('result3').innerHTML = selim(-res-m*9.8*(h+crh), 3) +" J";
 
-var result = V-(V*r)/(2*R+r);
-var result2 = V-(V*r)/(3/2*R+r);
-document.getElementById('result').innerHTML = result;
-document.getElementById('result2').innerHTML = result2;
 
       }
     </script>

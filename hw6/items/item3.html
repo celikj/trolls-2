@@ -37,12 +37,17 @@
         <h3>Inputs</h3>
 
 <div class="input">
-    <input id="r" placeholder="resistance" type="text">
+    <input id="m" placeholder="cart mass (kg)" type="text">
 </div>
 <div class="input">
-  <input id="c" placeholder="capacitance" type="text">
+  <input id="d" placeholder="ramp (degrees)" type="text">
 </div>
-
+<div class="input">
+  <input id="lmao" placeholder="force (degrees)" type="text">
+</div>
+<div class="input">
+  <input id="l" placeholder="ramp length (m)" type="text">
+</div>
         <button class="calculate-button " onclick="calculate()">Calculate</button>
       </div>
 
@@ -50,8 +55,16 @@
         <h3>Answers</h3>
 
 <div>
-    PART A:
-    <span id="result"></span>
+  PART A:
+  <span id="result"></span>
+</div>
+<div>
+  PART B:
+  <span id="result2"></span>
+</div>
+<div>
+  PART C:
+  <span id="result3"></span>
 </div>
 
       </div>
@@ -70,14 +83,16 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var r = Number(document.getElementById('r').value);
-var c = Number(document.getElementById('c').value);
+var m = Number(document.getElementById('m').value);
+var d = Number(document.getElementById('d').value);
+var l = Number(document.getElementById('l').value);
 
-var aynen = -Math.log(0.2) *r*c* Math.pow(10, -6);
+var res = mert(-m*9.8*Math.sin(d*Math.PI/180)*l, 2);
 
 
-document.getElementById('result').innerHTML = aynen + "(s)";
-
+document.getElementById('result').innerHTML = res + " J";
+document.getElementById('result2').innerHTML = 0
+document.getElementById('result3').innerHTML = -res + " J";
       }
     </script>
   </body>

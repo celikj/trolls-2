@@ -37,10 +37,10 @@
         <h3>Inputs</h3>
 
 <div class="input">
-    <input id="v" placeholder="terminal voltage" type="text">
+    <input id="m" placeholder="length along ramp (m)" type="text">
 </div>
 <div class="input">
-  <input id="c" placeholder="current (A)" type="text">
+  <input id="u" placeholder="coefficient of friction (μk)" type="text">
 </div>
 
         <button class="calculate-button " onclick="calculate()">Calculate</button>
@@ -57,6 +57,18 @@
 <div>
   PART B:
   <span id="result2"></span>
+</div>
+<div>
+  PART C:
+  <span>0 J</span>
+</div>
+<div>
+  PART D:
+  <span id="result4"></span>
+</div>
+<div>
+  PART E:
+  <span id="result5"></span>
 </div>
 
       </div>
@@ -75,17 +87,17 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var v = Number(document.getElementById('v').value);
-var c = Number(document.getElementById('c').value);
-var result = (12-v)/c;
-var result2 = v/c; 
-var resultExp = result.toExponential();
-var resultReplace = resultExp.replace(/e\+?/, ' * 10^');
-var result2Exp = result2.toExponential();
-var result2Replace = result2Exp.replace(/e\+?/, ' * 10^');
+var m = Number(document.getElementById('m').value);
+var u = Number(document.getElementById('u').value);
+var result = 150*Math.cos(32*Math.PI/180)*m;
+var result2=-18*9.8*Math.sin(32*Math.PI/180)*m;
+var result4=-m*((18*9.8*Math.cos(32*Math.PI/180)+(150*Math.sin(32*Math.PI/180)))*u);
+var result5=Math.sqrt(2*(result+result2+result4)/18);
 
-document.getElementById('result').innerHTML = resultReplace;
-document.getElementById('result2').innerHTML = result2Replace;
+document.getElementById('result').innerHTML = mert(result, 3) +" J";
+document.getElementById('result2').innerHTML = mert(result2, 3) +" J";
+document.getElementById('result4').innerHTML = mert(result4, 3) +" J";
+document.getElementById('result5').innerHTML = mert(result5, 2) +" m/s";
       }
     </script>
   </body>

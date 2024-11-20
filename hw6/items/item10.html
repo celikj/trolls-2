@@ -1,77 +1,122 @@
-
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Trolls2 hw6 item10</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="../../css/style.css" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link href="../../css/style.css" rel="stylesheet" />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-DEGZT5119E');
+      gtag("config", "G-DEGZT5119E");
     </script>
-
-     
-
-     
   </head>
 
   <body>
     <div class="container">
       <h1>trolls2 hw6 item10</h1>
 
-      <div class="screenshots hidden">
+      <div class="screenshots hidden"></div>
 
+      <div class="inputs">
+        <h3>Inputs</h3>
+
+        <div class="input">
+          <input id="mu" placeholder="friction coefficient" type="text" />
+        </div>
+        <div class="input">
+          <input
+            id="meters"
+            placeholder="part B-D-F position (m)"
+            type="text"
+          />
+        </div>
+
+        <button class="calculate-button" onclick="calculate()">
+          Calculate
+        </button>
       </div>
 
-      <div class="answers ">
+      <div class="answers">
         <h3>Answers</h3>
 
-<div>
-    PART A:
-    C*R@Sub{1}*@DIV{R@Sub{2};R@Sub{1}+R@Sub{2}}
-</div>
-<div>
-    PART B:
-    R@Sub{2}*C*@DIV{&cale;;R@Sub{1}+R@Sub{2}}
-</div>
-
+        <div>PART A: 24 J</div>
+        <div>
+          PART B:
+          <span id="resultB"></span>
+        </div>
+        <div>
+          PART C:
+          <span id="resultC"></span>
+        </div>
+        <div>
+          PART D:
+          <span id="resultD"></span>
+        </div>
+        <div>
+          PART E:
+          <div>
+            <img class="img" src="./10E.png" />
+          </div>
+        </div>
+        <div>
+          PART F:
+          <span id="resultF"></span>
+        </div>
       </div>
     </div>
 
-    <div class="buttons ">
+    <div class="buttons">
       <a class="button-previous" href="item9.html">Previous</a>
       <a class="button-middle" href="../menu.html">Items</a>
-      <a class="button-next" href="item11.html">Next</a>
     </div>
 
-    <div class="footer">
-        trolls2
-    </div>
+    <div class="footer">trolls2</div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var ef = Number(document.getElementById('ef').value);
-var e = Number(document.getElementById('e').value);
-var v = Number(document.getElementById('v').value);
-//
+        var mu = Number(document.getElementById("mu").value);
+        var meters = Number(document.getElementById("meters").value);
+        var m = 2;
+        var v = 4.9;
+        var kF = 20;
+        var g = 9.8;
+        var Einitial = 24.01;
+        var FfrInitial = m * g * mu;
+        var cos = Math.cos((36.8 / 180) * Math.PI);
+        var sin = Math.sin((36.8 / 180) * Math.PI);
 
-var result = e*100/ef;
-var result2 = result/v;
-document.getElementById('result').innerHTML = result;
-document.getElementById('result2').innerHTML = result2;
-      
+        var force = kF * meters;
+        //
+
+        var resultB = ((force * cos) / 2) * meters;
+        var resultD = (force * sin + m * g) * mu;
+        var resultF = Math.sqrt(Einitial + resultB - ((resultD + FfrInitial) / 2) * meters);
+
+        document.getElementById("resultB").innerHTML = mert(resultB, 2) + " J";
+        document.getElementById("resultC").innerHTML = FfrInitial + " N";
+        document.getElementById("resultD").innerHTML = mert(resultD, 2) + " N";
+        document.getElementById("resultF").innerHTML = mert(resultF, 2) + " m/s";
       }
     </script>
   </body>
-
 </html>

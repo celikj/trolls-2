@@ -29,12 +29,25 @@
     <div class="container">
       <h1>trolls2 hw6 item4</h1>
 
+      <div class="inputs ">
+        <h3>Inputs</h3>
+
+<div class="input">
+    <input id="x" placeholder="x component (i)" type="text">
+</div>
+<div class="input">
+  <input id="y" placeholder="y component (j)" type="text">
+</div>
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
+
       <div class="answers ">
         <h3>Answers</h3>
 
-<div>
-    PART A: V&amp;epsi;@Sub{0}(K-1)@DIV{r@Sup{2};d&cdelta;t}
-</div>
+        <div>
+          PART A:
+          <span id="result"></span>
+        </div>
       </div>
     </div>
 
@@ -49,7 +62,18 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+var x = Number(document.getElementById('x').value);
+var y = Number(document.getElementById('y').value);
 
+var f = Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
+var res1 = -(x/f)
+var res2 = y/f
+
+document.getElementById('result').innerHTML = mert(res2, 2) + ", " + mert(res1, 2);
+      }
+    </script>
   </body>
 
 </html>
