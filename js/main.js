@@ -9,3 +9,13 @@ document.addEventListener('keydown', function(e) {
 		calculate();
 	}
 });
+
+function selim(n, f) {
+	let nSig= Number(n.toPrecision(f));
+	let nExp = nSig.toExponential();
+	return nExp.replace(/e\+?/,'*10^');
+}
+
+function mert(n, f) {
+	return Number(n.toPrecision(f));
+}
