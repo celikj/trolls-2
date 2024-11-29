@@ -1,0 +1,95 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw7 item9</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw7 item9</h1>
+
+      <div class="inputs ">
+        <h3>Inputs</h3>
+  
+  <div class="input">
+    <input id="m" placeholder="mass of student (kg)" type="text">
+  </div>
+  <div class="input">
+    <input id="v" placeholder="running velocity (m/s)" type="text">
+  </div>
+
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
+
+      <div class="answers ">
+        <h3>Answers</h3>
+
+<div>
+    PART A:
+    <span id = "resultA"></span>
+</div>
+<div>
+  PART B:
+  <span id = "resultB"></span> N
+</div>
+<div>
+  PART C:
+  <span id = "resultC"></span> N
+</div>
+      </div>
+    </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item8.html">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item10.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+var m = Number(document.getElementById('m').value);
+var v = Number(document.getElementById('v').value);
+var g = 9.8;
+var r = 10;
+var cosTheta = 1-(Math.pow(v, 2)/(20*g));
+
+var resultA = Math.acos(cosTheta) * (180 / Math.PI);
+var resultB = m*g*cosTheta;
+var resultC = m*Math.pow(v, 2)/r + m*g;
+
+document.getElementById('resultA').innerHTML = mert(resultA, 2);
+document.getElementById('resultB').innerHTML = mert(resultB, 2);
+document.getElementById('resultC').innerHTML = mert(resultC, 2);
+
+
+      }
+    </script>
+  </body>
+
+</html>

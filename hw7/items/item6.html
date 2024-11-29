@@ -1,0 +1,100 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw6 item6</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+    
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw7 item6</h1>
+
+      <div class="inputs ">
+        <h3>Inputs</h3>
+  
+  
+        <div class="input">
+          <input id="mcar" placeholder="mass of car (kg)" type="text">
+        </div>
+  <div class="input">
+    <input id="v0" placeholder="initial velocity (km/h)" type="text">
+  </div>
+  <div class="input">
+    <input id="vf" placeholder="final velocity (km/h)" type="text">
+  </div>
+  <div class="input">
+    <input id="t" placeholder="time interval (s)" type="text">
+  </div>
+  
+  
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
+
+      <div class="answers ">
+        <h3>Answers</h3>
+
+<div>
+  PART A:
+  <span id = "resultA"></span> W
+</div>
+
+<div>
+  PART B:
+  <span id = "resultB"></span> hp
+</div>
+
+      </div>
+    </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item5.html">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item7.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+        var mcar = Number(document.getElementById('mcar').value);
+        var v0 = Number(document.getElementById('v0').value);
+        var vf = Number(document.getElementById('vf').value);
+        var t = Number(document.getElementById('t').value);
+
+var resultA = (Math.pow(v0/3.6, 2)-Math.pow(vf/3.6, 2))*mcar/(2*t);
+var resultB = resultA / 746;
+
+
+document.getElementById('resultA').innerHTML = selim(resultA, 2);
+document.getElementById('resultB').innerHTML = mert(resultB, 2);
+
+      }
+    </script>
+
+    
+  </body>
+
+</html>
