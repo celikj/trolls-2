@@ -36,51 +36,47 @@
         <h3>Inputs</h3>
   
   <div class="input">
-    <input id="l" placeholder="length (m)" type="text">
+    <input id="m" placeholder="mass (kg)" type="text">
   </div>
   
   <div class="input">
-  <input id="c" placeholder="current (A)" type="text">
+  <input id="h" placeholder="height (m)" type="text">
   </div>
 
   <div class="input">
-    <input id="fi" placeholder="F_i (N)" type="text">
-    </div>
-    
-  <div class="input">
-    <input id="fk" placeholder="F_k (positive N)" type="text">
+    <input id="k" placeholder="spring constant (N/m)" type="text">
     </div>
 
         <button class="calculate-button " onclick="calculate()">Calculate</button>
       </div>
+
       <div class="answers ">
         <h3>Answers</h3>
 
 <div>
   PART A:
-  <span id="result1"></span>
+  <span id="result1"></span> J
 </div>
 
 <div>
   PART B: 
-  0
+  <span id="result2"></span> m/s
 </div>
 
 <div>
   PART C:
-  <span id="result2"></span>
+  <span id="result3"></span> m
 </div>
 
 
       </div>
     </div>
-
+      <div class="screenshots"><img class="img" src="../ahmetkaya.png" style="  display: block; margin-left: auto;margin-right: auto;width: 20%;"></div>
     <div class="buttons ">
       <a class="button-previous" href="item9.html">Previous</a>
       <a class="button-middle" href="../menu.html">Items</a>
-      <a class="button-next" href="item11.html">Next</a>
     </div>
-
+    
     <div class="footer">
         trolls2
     </div>
@@ -88,16 +84,18 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var l = Number(document.getElementById('l').value);
-var c = Number(document.getElementById('c').value);
-var fi = Number(document.getElementById('fi').value);
-var fk = Number(document.getElementById('fk').value);
+var m = Number(document.getElementById('m').value);
+var h = Number(document.getElementById('h').value);
+var k = Number(document.getElementById('k').value);
+g = 9.8;
 
-var result1 = fk/(c*l);
-var result2 = fi/(c*l);
+var result1 = m*g*h;
+var result2 = Math.sqrt(2*g*h);
+var result3 = berken(k/2, -m*g, -m*g*h);
 
-document.getElementById('result1').innerHTML = result1;
-document.getElementById('result2').innerHTML = result2;
+document.getElementById('result1').innerHTML = selim(result1, 2);
+document.getElementById('result2').innerHTML = mert(result2, 2);
+document.getElementById('result3').innerHTML = mert(result3, 2);
 
       }
     </script>

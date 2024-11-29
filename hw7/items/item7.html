@@ -28,14 +28,38 @@
   <body>
     <div class="container">
       <h1>trolls2 hw7 item7</h1>
+      <div class="inputs ">
+        <h3>Inputs</h3>
+
+        <div class="input">
+          <input id="k" placeholder="h/l (x for which h = xl)" type="text">
+        </div>
+
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
 
       <div class="answers ">
         <h3>Answers</h3>
 
-<div>
-    PART A: 
-    The helix for B will have wider circles closer to each other.
-</div>
+        <div>
+          PART A: <hr>
+                <div>
+                  <img class="img" src="./7A.png">
+                </div>
+                <div>OR COPY THE FOLLOWING:</div><br>
+                <div>@RT{2gl}</div>
+        </div>
+        <div>
+          PART B: <hr>
+          
+                <div>
+                  <img class="img" src="./7B.png">
+                </div>
+                <div>where k = <span id = "resultK"></span></div><br>
+                
+                <div>OR COPY THE FOLLOWING:</div>
+                <div>@RT{  <span id = "resultK2"</span></span>   gl}</div>
+        </div>
 
       </div>
     </div>
@@ -51,6 +75,16 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+        var k = Number(document.getElementById('k').value);
+        var resultK = 4*k-2;
+
+document.getElementById('resultK').innerHTML = mert(resultK, 2);
+document.getElementById('resultK2').innerHTML = mert(resultK, 2)
+
+      }
+    </script>
   </body>
 
 </html>

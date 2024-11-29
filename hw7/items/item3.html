@@ -28,13 +28,22 @@
   <body>
     <div class="container">
       <h1>trolls2 hw7 item3</h1>
+      <div class="inputs ">
+        <h3>Inputs</h3>
+  
+  <div class="input">
+    <input id="k" placeholder="spring constant (N/m)" type="text">
+  </div>
+
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
 
       <div class="answers ">
         <h3>Answers</h3>
 
 <div>
     PART A:
-    down
+    <span id = "result1"></span> m
 </div>
 
       </div>
@@ -51,6 +60,17 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+var k = Number(document.getElementById('k').value);
+
+var result1 = 12*9.8/k;
+
+document.getElementById('result1').innerHTML = mert(result1, 3);
+
+
+      }
+    </script>
   </body>
 
 </html>

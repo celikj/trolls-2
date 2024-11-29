@@ -36,11 +36,9 @@
       <h3>Inputs</h3>
 
 <div class="input">
-  <input id="mm" placeholder="magnetic moment" type="text">
+  <input id="v0" placeholder="initial velocity (km/s)" type="text">
 </div>
-<div class="input">
-<input id="mf" placeholder="magnetic field" type="text">
-</div>
+
 
       <button class="calculate-button " onclick="calculate()">Calculate</button>
     </div>
@@ -48,9 +46,18 @@
     <div class="answers ">
       <h3>Answers</h3>
 
-<div>
-  PART A:
-  <span id="result"></span>
+      <div>
+        PART A: <hr>
+              <div>
+                <img class="img" src="./4A.png">
+              </div>
+              <div>OR COPY THE FOLLOWING:</div><br>
+              <div>@DIV{v@Sub{0}@Sup{2}r@Sub{E}@Sup{2};2GM@Sub{E}-v@Sub{0}@Sup{2}r@Sub{E}}</div>
+      </div>
+
+      <div>
+  PART B: <hr>
+  <span id="result"></span> m
 </div>
 
     </div>
@@ -69,13 +76,17 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var mm = Number(document.getElementById('mm').value);
-var mf = Number(document.getElementById('mf').value);
+var v0 = Number(document.getElementById('v0').value);
 
-var result = -2*mm*mf;
+rE = 6.38 * Math.pow(10,6);
+G = 6.67 * Math.pow(10,-11);
+ME = 5.98 * Math.pow(10,24);
+v0 *= 1000;
+
+var result = (Math.pow(v0, 2)*Math.pow(rE, 2))/(2*G*ME - Math.pow(v0, 2)*rE);
 
 
-document.getElementById('result').innerHTML = result;
+document.getElementById('result').innerHTML = selim(result, 3);
 
       }
     </script>
