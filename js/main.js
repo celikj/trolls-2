@@ -10,12 +10,16 @@ document.addEventListener('keydown', function(e) {
 	}
 });
 
-function selim(n, f) {
+function selim(n, f) { //sigfig + sci_notation
 	let nSig= Number(n.toPrecision(f));
 	let nExp = nSig.toExponential();
 	return nExp.replace(/e\+?/,'*10^');
 }
 
-function mert(n, f) {
+function mert(n, f) { //sigfig
 	return Number(n.toPrecision(f));
+}
+
+function berken(a, b, c){
+	return (-b + Math.sqrt(Math.pow(b, 2) - 4*a*c))/(2*a);
 }
