@@ -23,3 +23,42 @@ function mert(n, f) { //sigfig
 function berken(a, b, c){
 	return (-b + Math.sqrt(Math.pow(b, 2) - 4*a*c))/(2*a);
 }
+
+function berkenn(n){
+	let prefix = '';
+	let postfix = '';
+
+	n = n.replaceAll(' ', '');
+	n = n.replace(',', '.');
+
+	if(n.includes('*')){
+		prefix = '*';
+	}
+	else if(n.includes('×')){
+		prefix = '×';
+	}
+	else if(n.includes('e')){
+		prefix = 'e';
+	}
+	else{
+		return Number(n);
+	}
+
+	if(n.includes('^^')){
+		postfix = '^^';
+	}
+	else if(n.includes('^')){
+		postfix = '^';
+	}
+	else if(n.includes('e')){
+		postfix = 'e';
+	}
+	else{
+		return Number(n);
+	}
+
+	power = Number(n.slice(n.indexOf(postfix) + postfix.length));
+	num = Number(n.slice(0, n.indexOf(prefix)));
+	
+	return num * Math.pow(10, power);
+}
