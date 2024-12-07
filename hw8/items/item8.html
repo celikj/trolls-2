@@ -1,0 +1,84 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw6 item8</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw8 item8</h1>
+
+
+      <div class="inputs ">
+        <h3>Inputs</h3>
+  
+  <div class="input">
+    <input id="v" placeholder="V_ball (m/s)" type="text">
+  </div>
+  
+    
+
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
+      <div class="answers ">
+        <h3>Answers</h3>
+
+        <div>
+          PART A:
+          <span id="result1"></span>
+        </div>
+
+        <div>
+          PART B: <hr>
+          <div>
+            <img class="img" src="./8B.png">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item7.html">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item9.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+	   var v = berkenn(document.getElementById('v').value);
+     var v3 = (4*sqr(dcos(32)) - 2)/(4*sqr(dcos(32)) + 2) * v;
+     var v12 = 4*dcos(32)/(4*sqr(dcos(32)) - 2) * v3;
+
+	   document.getElementById('result1').innerHTML = mert(v12, 2) + ", " + mert(v12, 2) + ", " + mert(v3, 2) + " m/s";
+      }
+    </script>
+  </body>
+
+</html>

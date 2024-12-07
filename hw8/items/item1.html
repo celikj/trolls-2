@@ -1,0 +1,100 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw8 item1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+    
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw8 item1</h1>
+
+      <div class="inputs ">
+        <h3>Inputs</h3>
+  
+  <div class="input">
+    <input id="m1" placeholder="m1" type="text">
+  </div>
+  <div class="input">
+  <input id="v1" placeholder="v1" type="text">
+  </div>
+  <div class="input">
+    <input id="m2" placeholder="m2" type="text">
+    </div>
+  
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
+      
+      <div class="answers ">
+        <h3>Answers</h3>
+
+        <div>
+          PART A:
+          <span id="result1"></span>
+        </div>
+
+        <div>
+          PART B:
+          <span id="result2"></span>
+        </div>
+
+        <div>
+          PART C:
+          <span id="result3"></span>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="buttons ">
+      <a></a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item2.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+	   var m1 = berkenn(document.getElementById('m1').value);
+	   var v1 = berkenn(document.getElementById('v1').value);
+	   var m2 = berkenn(document.getElementById('m2').value);
+
+     var result1 = m1*v1;
+     var result2 = result1 / (m1 + m2);
+     var Ki = 0.5 * m1 * Math.pow(v1, 2);
+     var Kf = 0.5 * (m1 + m2) * Math.pow(result2, 2);
+     var result3 = Kf - Ki;
+
+	   document.getElementById('result1').innerHTML = mert(result1, 3) + " kg*m/s";
+     document.getElementById('result2').innerHTML = mert(result2, 3) + " m/s";
+     document.getElementById('result3').innerHTML = mert(result3, 3) + " J";
+      }
+</script>
+  </body>
+
+</html>

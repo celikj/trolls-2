@@ -1,0 +1,105 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw8 item6</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+    
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw8 item6</h1>
+      
+      <div class="inputs ">
+        <h3>Inputs</h3>
+      <div class="input">
+        <input id="m" placeholder="person mass(kg)" type="text">
+      </div>
+      <div class="input">
+        <input id="h" placeholder="height(m)" type="text">
+      </div>
+      <div class="input">
+        <input id="il" placeholder="impact lenght(cm)" type="text">
+      </div>
+      <div class="input">
+        <input id="bm" placeholder="body move lenght(m)" type="text">
+      </div>
+      
+      
+            <button class="calculate-button " onclick="calculate()">Calculate</button>
+          </div>
+    
+      <div class="answers ">
+        <h3>Answers</h3>
+        <div>
+          PART A:
+          <span id="result1"></span>
+     </div>
+     <div>
+      PART B:
+      <span id="result2"></span>
+      </div>
+      <div>
+        PART C:
+        <span id="result3"></span>
+   </div>
+        
+
+      </div>
+    </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item5.html">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item7.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+	   var m = berkenn(document.getElementById('m').value);
+      var h = berkenn(document.getElementById('h').value);
+      var il = berkenn(document.getElementById('il').value)/100;
+      var bm = berkenn(document.getElementById('bm').value)/100;
+      var v=sqrt(9.8*h*2);
+      var a=sqr(v)/2/il;
+      var t=v/a;
+
+      var result1=v*m;
+      var result2=result1/t +m*9.8
+      a=sqr(v)/2/bm;
+      t=v/a;
+      var result3=result1/t +m*9.8
+	   document.getElementById('result1').innerHTML = mert(result1, 2);
+      document.getElementById('result2').innerHTML = selim(result2,2);
+      document.getElementById('result3').innerHTML = mert(result3, 2);
+      }
+</script>
+
+    
+  </body>
+
+</html>

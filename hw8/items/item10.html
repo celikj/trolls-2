@@ -1,0 +1,107 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw8 item10</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+    
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw8 item10</h1>
+      <div class="screenshots hidden">
+
+      </div>
+  
+      <div class="inputs ">
+        <h3>Inputs</h3>
+  
+  <div class="input">
+    <input id="m" placeholder="mass of block (kg)" type="text">
+  </div>
+  
+  <div class="input">
+  <input id="mb" placeholder="mass of bullet (g)" type="text">
+  </div>
+
+  <div class="input">
+    <input id="vb" placeholder="velocity of bullet (m/s)" type="text">
+    </div>
+
+    <div class="input">
+      <input id="mu" placeholder="friction coefficient (μk)" type="text">
+      </div>
+    
+
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
+      <div class="answers ">
+        <h3>Answers</h3>
+
+<div>
+  PART A:
+  <span id="result1"></span>
+</div>
+
+<div>
+  PART B:
+  <span id="result2"></span>
+</div>
+
+
+      </div>
+      <!--<div class="screenshots">
+        <img class="img"
+        src="../aynen">
+      </div>-->
+    </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item9.html">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+var m = berkenn(document.getElementById('m').value);
+var mb = berkenn(document.getElementById('mb').value)/1000;
+var vb = berkenn(document.getElementById('vb').value);
+var mu = berkenn(document.getElementById('mu').value);
+
+var v2 = pow(mb*vb/(m + mb), 2);
+
+var result1 = v2/(2*9.8*dsin(25));
+var result2 = v2/(2*9.8*(dsin(25) + dcos(25)*mu));
+
+document.getElementById('result1').innerHTML = mert(result1, 2) + " m";
+document.getElementById('result2').innerHTML = mert(result2, 2) + " m";
+
+      }
+    </script>
+  </body>
+
+</html>

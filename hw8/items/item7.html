@@ -1,0 +1,98 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw8 item7</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw8 item7</h1>
+      
+      <div class="inputs ">
+        <h3>Inputs</h3>
+      <div class="input">
+        <input id="mbullet" placeholder="bullet of mass(kg)" type="text">
+      </div>
+      <div class="input">
+        <input id="mwood" placeholder="mass of wooden block (kg)" type="text">
+      </div>
+      <div class="input">
+        <input id="k" placeholder="spring k = (N/m)" type="text">
+      </div>
+      <div class="input">
+        <input id="dist" placeholder="distance (m)" type="text">
+      </div>
+      <div class="input">
+        <input id="uk" placeholder=" coefficient of kinetic friction" type="text">
+      </div>
+      
+            <button class="calculate-button " onclick="calculate()">Calculate</button>
+          </div>
+    
+      <div class="answers ">
+        <h3>Answers</h3>
+        <div>
+          PART A:
+          <span id="result1"></span>
+     </div>
+     <div>
+      PART B:
+      <span id="result2"></span>
+      </div>
+
+        
+
+      </div>
+    </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item6.html">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item8.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+        var mbullet = berkenn(document.getElementById('mbullet').value);
+        var mwood = berkenn(document.getElementById('mwood').value);
+        var k = berkenn(document.getElementById('k').value);
+        var dist = berkenn(document.getElementById('dist').value);
+        var uk = berkenn(document.getElementById('uk').value);
+
+        var result1=sqrt((k*sqr(dist) + 2*uk*9.8*dist*(mwood+mbullet))*(mwood+mbullet))/mbullet;
+        var result2=mwood/(mbullet+mwood);
+        document.getElementById('result1').innerHTML =mert(result1,2);
+        document.getElementById('result2').innerHTML =mert(result2,3);
+
+      }
+    </script>
+    
+  </body>
+
+</html>
