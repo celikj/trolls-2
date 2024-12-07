@@ -62,3 +62,23 @@ function berkenn(n){
 	
 	return num * Math.pow(10, power);
 }
+
+function pow(n, k){
+	return Math.pow(n, k);
+}
+
+function sqrt(n){
+	return Math.pow(n, 0.5);
+}
+
+function sqr(n){
+	return Math.pow(n, 2);
+}
+
+function dsin(a){
+	return Math.sin(a/180*Math.PI);
+}
+
+function dcos(a){
+	return Math.cos(a/180*Math.PI);
+}
