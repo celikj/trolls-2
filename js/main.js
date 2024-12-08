@@ -17,7 +17,7 @@ function selim(n, f) { //sigfig + sci_notation
 }
 
 function mert(n, f) { //sigfig
-	return Number(n.toPrecision(f));
+	return Number((n + 1e-11).toPrecision(f));
 }
 
 function berken(a, b, c){
