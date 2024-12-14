@@ -36,13 +36,13 @@
       <h3>Inputs</h3>
 
 <div class="input">
-  <input id="B" placeholder="magnetic field" type="text">
+  <input id="m" placeholder="mass of hammer (kg)" type="text">
 </div>
 <div class="input">
-<input id="R" placeholder="resistance" type="text">
+<input id="v" placeholder="velocity of hammer (m/s)" type="text">
 </div>
 <div class="input">
-  <input id="v" placeholder="velocity" type="text">
+  <input id="r" placeholder="circular radius (m)" type="text">
   </div>
 
       <button class="calculate-button " onclick="calculate()">Calculate</button>
@@ -53,7 +53,23 @@
 
 <div>
   PART A:
-  <span id="result"></span>
+  <span id="resultA"></span>
+</div>
+<div>
+  PART B:
+  <span id="resultB"></span>
+</div>
+<div>
+  PART C:
+  <span id="resultC"></span>
+</div>
+<div>
+  PART D:
+  <span id="resultD"></span>
+</div>
+<div>
+  PART E:
+  <span id="resultE"></span>
 </div>
     </div>
   </div>
@@ -71,15 +87,21 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var B = Number(document.getElementById('B').value);
-var R = Number(document.getElementById('R').value);
-var v = Number(document.getElementById('v').value);
+var m = berkenn(document.getElementById('m').value);
+var v = berkenn(document.getElementById('v').value);
+var r = berkenn(document.getElementById('r').value);
 
-var result = B*B*v*0.35*0.35/R;
+var resultA = sqr(v)/(2*sqr(r)*8*Math.PI);
+var resultB = resultA * r;
+var resultC = sqr(v) / r;
+var resultD = sqrt(sqr(resultB * m) + sqr(resultC * m))
+var resultE = Math.atan(resultB/resultC) * (180 / Math.PI);
 
-
-document.getElementById('result').innerHTML = result;
-
+document.getElementById('resultA').innerHTML = mert(resultA, 3).toString() + " rad/s^2";
+document.getElementById('resultB').innerHTML = mert(resultB, 3).toString() + " m/s^2";
+document.getElementById('resultC').innerHTML = mert(resultC, 3).toString() + " m/s^2";
+document.getElementById('resultD').innerHTML = mert(resultD, 3).toString() + " N";
+document.getElementById('resultE').innerHTML = mert(resultE, 3).toString() + " °";
       }
     </script>
   </body>

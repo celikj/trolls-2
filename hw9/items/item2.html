@@ -29,27 +29,69 @@
     <div class="container">
       <h1>trolls2 hw9 item2</h1>
 
+      <div class="inputs ">
+        <h3>Inputs</h3>
+      
+        <div class="input">
+           <input id="a" placeholder="a (rad/s)" type="text" style="float: left; width: 0px;">
+          <input id="b" placeholder="b (rad/s^2)" type="text" style="float: left; width: 0px;">
+        <input id="c" placeholder="c (rad/s^4)" type="text" style="float: left; width: 0px;">
+     </div>
+
+     <div class="input">
+      <input id="t" placeholder="time (s)" type="text">
+   </div>
+
+   <div class="input">
+    <input id="ti" placeholder="initial time (s)" type="text">
+ </div>
+        
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
+
       <div class="answers ">
         <h3>Answers</h3>
 
-<div>
-    PART A:
-    -Bv
-</div>
-<div>
-  PART B:
-  -BvL
-</div>
+        <div>
+          PART A: <hr>
+          <div>
+               <img class="img" src="./2A.png">
+          </div>
+          <div>OR COPY THE FOLLOWING:</div><br>
+          <div>4ct@Sup{3}-2bt+a</div>
+     </div>
+
+     <div>
+      PART B: <hr>
+      <div>
+           <img class="img" src="./2B.png">
+      </div>
+      <div>OR COPY THE FOLLOWING:</div><br>
+      <div>12ct@Sup{2}-2b</div>
+ </div>
+
 <div>
   PART C:
-  e
-</div>
-<div>
-  PART D:
-  positive
+  <span id="resultC"></span>
 </div>
 
-      </div>
+<div>
+  PART D:
+  <span id="resultD"></span>
+</div>
+
+<div>
+  PART E:
+  <span id="resultE"></span>
+</div>
+
+<div>
+  PART F:
+  <span id="resultF"></span>
+</div>
+
+
+</div>
     </div>
 
     <div class="buttons ">
@@ -63,6 +105,38 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function tetha(a, b, c, t){
+        return c*pow(t,4) - b*sqr(t) + a*t;
+      }
+      
+      function w(a, b, c, t){
+        return 4*c*pow(t,3) - 2*b*t + a;
+      }
+
+      function alpha(a, b, c, t){
+        return 12*c*sqr(t) - 2*b;
+      }
+
+      function calculate() {
+         var a = berkenn(document.getElementById('a').value);
+         var b = berkenn(document.getElementById('b').value);
+         var c = berkenn(document.getElementById('c').value);
+         var t = berkenn(document.getElementById('t').value);
+         var ti = berkenn(document.getElementById('ti').value);
+        
+         var w1 = w(a, b, c, t);
+         var alpha1 = alpha(a, b, c, t);
+
+         var w_avg = (tetha(a, b, c, t) - tetha(a, b, c, ti))/(t - ti);
+         var alpha_avg = (w1 - w(a, b, c, ti))/(t - ti);
+
+         document.getElementById('resultC').innerHTML = mert(w1, 2);
+         document.getElementById('resultD').innerHTML = mert(alpha1, 2);
+         document.getElementById('resultE').innerHTML = mert(w_avg, 2);
+         document.getElementById('resultF').innerHTML = mert(alpha_avg, 2);
+      }
+    </script>
   </body>
 
 </html>

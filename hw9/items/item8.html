@@ -35,20 +35,11 @@
       <h3>Inputs</h3>
 
 <div class="input">
-  <input id="n" placeholder="loop" type="text">
+     <input id="r_0" placeholder="r₀ (cm)" type="text">
 </div>
 <div class="input">
-<input id="b1" placeholder="magnetic flux (_t)" type="text">
+  <input id="R_0" placeholder="R₀ (cm)" type="text">
 </div>
-<div class="input">
-  <input id="b2" placeholder="magnetic flux (-_t^3)" type="text">
-  </div>
-  <div class="input">
-    <input id="t1" placeholder="time(part B)" type="text">
-    </div>
-    <div class="input">
-      <input id="t2" placeholder="time(part C)" type="text">
-      </div>
 
       <button class="calculate-button " onclick="calculate()">Calculate</button>
     </div>
@@ -58,15 +49,11 @@
 
 <div>
   PART A: 
-  <span id="result"></span>
+  <span id="resultA"></span>
 </div>
 <div>
   PART B:
-  <span id="result3"></span>
-</div>
-<div>
-  PART C:
-  <span id="result4"></span>
+  <span id="resultB"></span>
 </div>
     </div>
   </div>
@@ -84,23 +71,15 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var n = Number(document.getElementById('n').value);
-var b1 = Number(document.getElementById('b1').value);
-var b2 = Number(document.getElementById('b2').value);
-var t1 = Number(document.getElementById('t1').value);
-var t2 = Number(document.getElementById('t2').value);
+var r_0 = berkenn(document.getElementById('r_0').value)/100;
+var R_0 = berkenn(document.getElementById('R_0').value)/100;
 
+var g = 9.8;
+var resultA = sqrt(10/7 * g * (R_0 - r_0)/sqrt(2));
+var resultB = (resultA * berken(g/2, -resultA/sqrt(2), (/*r_0*/ - R_0)*(1-1/sqrt(2))) + (R_0/* - r_0*/)) / sqrt(2);
 
-var result = -b1*n/100;
-var result2= b2*3*n/100;
-var result3 = (result2*t1*t1)+result;
-var result4 = (result2*t2*t2)+result;
-var rounded = result4.toFixed(4);
-
-document.getElementById('result').innerHTML = result + "+" + result2 + "t^2";
-document.getElementById('result3').innerHTML = result3;
-document.getElementById('result4').innerHTML = rounded;
-
+document.getElementById('resultA').innerHTML = mert(resultA, 2).toString() + " m/s";
+document.getElementById('resultB').innerHTML = mert(resultB, 2).toString() + " m";
 
       }
     </script>

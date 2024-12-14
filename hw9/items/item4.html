@@ -36,46 +36,30 @@
 
 
 <div class="input">
-  <input id="l" placeholder="length(cm)" type="text">
+  <input id="m_ball" placeholder="mass of ball (kg)" type="text">
 </div>
 <div class="input">
-<input id="B" placeholder="magnetic field" type="text">
+<input id="m_arm" placeholder="mass of arm (kg)" type="text">
 </div>
 <div class="input">
-  <input id="v" placeholder="speed(m/s)" type="text">
+  <input id="v" placeholder="ball velocity (m/s)" type="text">
   </div>
+  <div class="input">
+    <input id="t" placeholder="time (s)" type="text">
+    </div>
 
       <button class="calculate-button " onclick="calculate()">Calculate</button>
     </div>
-    <div class="answers ">
+    <div class="answers">
       <h3>Answers</h3>
-
-<div>
-  PART A:
-  b
-  </div>
-  <div>
-    PART B:
-    from b toward a
-    </div>
-    <div>
-      PART C:
-      <span id="result"></span>
-      </div>
-      <div>
-        PART D:
-        b
-        </div>
         <div>
-          PART E:
-          <span id="result2"></span>
+          PART A:
+          <span id="resultA"></span>
           </div>
           <div>
-            PART F:
-            <span id="result3"></span>
+            PART B:
+            <span id="resultB"></span>
             </div>
-
-</div>
 
     </div>
   </div>
@@ -94,16 +78,14 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
     function calculate() {
-      var l = Number(document.getElementById('l').value);
-      var B = Number(document.getElementById('B').value);
-      var v = Number(document.getElementById('v').value);
-      result=B*v;
-      result2=B*v*l*Math.pow(10,-2);
-      result3=result2;
-      document.getElementById('result').innerHTML = result;
-      document.getElementById('result2').innerHTML = result2;
-      document.getElementById('result3').innerHTML = result3;
-      
+      var m_ball = berkenn(document.getElementById('m_ball').value);
+      var m_arm = berkenn(document.getElementById('m_arm').value);
+      var v = berkenn(document.getElementById('v').value);
+      var t = berkenn(document.getElementById('t').value);
+      var resultA = v/(0.31*t);
+      var resultB = sqr(0.31)/0.025 * resultA * (m_arm/3 + m_ball);
+      document.getElementById('resultA').innerHTML = mert(resultA, 2).toString() + ' rad/s^2';
+      document.getElementById('resultB').innerHTML = mert(resultB, 2).toString() + ' N';
     }
   </script>
   </body>

@@ -34,25 +34,13 @@
   
       <div class="inputs ">
         <h3>Inputs</h3>
-
-  <div class="input">
-    <input id="v" placeholder="rod speed" type="text">
-  </div>
   
   <div class="input">
-    <input id="r" placeholder="rod resistance (ohm)" type="text">
-  </div>
-  
-  <div class="input">
-    <input id="l" placeholder="rail seperation l" type="text">
+    <input id="x" placeholder="length along the plane (m)" type="text">
   </div>
 
   <div class="input">
-    <input id="B" placeholder="magnetic field" type="text">
-  </div>
-
-  <div class="input">
-    <input id="u" placeholder="U shaped resistance" type="text">
+    <input id="mu" placeholder="friction coefficient (μ)" type="text">
   </div>
   
 
@@ -65,17 +53,12 @@
 
 <div>
   PART A:
-  <span id="result1"></span>
+  <span id="resultA"></span>
 </div>
 
 <div>
   PART B:
-  <span id="result2"></span>
-</div>
-
-<div>
-  PART C:
-  <span id="result3"></span>
+  <span id="resultB"></span>
 </div>
 
 
@@ -86,7 +69,6 @@
     <div class="buttons ">
       <a class="button-previous" href="item9.html">Previous</a>
       <a class="button-middle" href="../menu.html">Items</a>
-      <a class="button-next" href="item11.html">Next</a>
     </div>
 
     <div class="footer">
@@ -103,22 +85,17 @@ function toScientific(num) {
 }
 
 function calculate() {
-    var v = Number(document.getElementById('v').value);
-    var r = Number(document.getElementById('r').value);
-    var l = Number(document.getElementById('l').value);
-    var b = Number(document.getElementById('B').value);
-    var U = Number(document.getElementById('u').value);
+    var m = 3;
+    var M = 33;
+    var x = Number(document.getElementById('x').value);
+    var mu = Number(document.getElementById('mu').value);
+    var g = 9.8;
 
-    var result1 = v*b*l/100;
-    var result2 = result1/(U + r);
-    var result3 = result2*l*b/100;
+    var resultA = sqrt(m*g*x*dsin(27) / (M/4 + m/2));
+    var resultB = sqrt(g*x*(m*(dsin(27) - mu*dcos(27)) - mu*M) / (M/4 + m/2));
 
-    var r2Exp = toScientific(result2);
-    var r3Exp = toScientific(result3);
-
-    document.getElementById('result1').innerHTML = result1.toFixed(2);
-    document.getElementById('result2').innerHTML = r2Exp;
-    document.getElementById('result3').innerHTML = r3Exp;
+    document.getElementById('resultA').innerHTML = mert(resultA, 2).toString() + " m/s";
+    document.getElementById('resultB').innerHTML = mert(resultB, 2).toString() + " m/s";
 }
     </script>
   </body>

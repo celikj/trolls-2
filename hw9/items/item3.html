@@ -36,17 +36,12 @@
       <h3>Inputs</h3>
 
 <div class="input">
-  <input id="n" placeholder="turns" type="text">
+  <input id="d" placeholder="diameter(cm)" type="text">
 </div>
 <div class="input">
-<input id="area" placeholder="area(cm^2)" type="text">
+  <input id="i" placeholder="force(i)" type="text" style="float: left; width: 0px;">
+  <input id="j" placeholder="force(j)" type="text" style="float: left; width: 0px;">
 </div>
-<div class="input">
-  <input id="t" placeholder="time interval(_x10^-2 s)" type="text">
-  </div>
-  <div class="input">
-    <input id="mfield" placeholder="magnetic field(_x10^-5)" type="text">
-    </div>
 
       <button class="calculate-button " onclick="calculate()">Calculate</button>
     </div>
@@ -57,14 +52,6 @@
 <div>
   PART A:
   <span id="result"></span>
-</div>
-<div>
-  PART B:
-  0
-</div>
-<div>
-  PART C:
-  <span id="result2"></span>
 </div>
     </div>
   </div>
@@ -82,17 +69,12 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var n = Number(document.getElementById('n').value);
-var area = Number(document.getElementById('area').value);
-var t = Number(document.getElementById('t').value);
-var mfield = Number(document.getElementById('mfield').value);
+var d = berkenn(document.getElementById('d').value);
+var j = berkenn(document.getElementById('j').value);
 
-var result = mfield*area*Math.pow(10,-9);
-var result2 = result*n*Math.pow(10,2)/t;
-var resultExp = result.toExponential();
-var resultReplace = resultExp.replace(/e\+?/, ' * 10^');
-document.getElementById('result').innerHTML = resultReplace;
-document.getElementById('result2').innerHTML = result2;
+var result = Math.abs((d/200)*j);
+
+document.getElementById('result').innerHTML = result;
 
 
       }

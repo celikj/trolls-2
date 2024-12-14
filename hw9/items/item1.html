@@ -36,17 +36,14 @@
       <h3>Inputs</h3>
 
 <div class="input">
-  <input id="cir" placeholder="circumference(cm)" type="text">
+  <input id="rpm" placeholder="rpm" type="text">
 </div>
 <div class="input">
-<input id="drate" placeholder="decrease rate(cm/s)" type="text">
+  <input id="rhl" placeholder="reading head location(cm)" type="text">
 </div>
 <div class="input">
-  <input id="mfield" placeholder="magnetic field" type="text">
-  </div>
-  <div class="input">
-    <input id="t" placeholder="time" type="text">
-    </div>
+  <input id="b" placeholder="single bit length(μm)" type="text">
+</div>
 
       <button class="calculate-button " onclick="calculate()">Calculate</button>
     </div>
@@ -56,11 +53,15 @@
 
 <div>
   PART A:
-  <span id="result"></span>
+  <span id="result1"></span>
 </div>
 <div>
   PART B:
-  clockwise
+  <span id="result2"></span>
+</div>
+<div>
+  PART C:
+  <span id="result3"></span>
 </div>
     </div>
   </div>
@@ -78,16 +79,17 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var cir = Number(document.getElementById('cir').value);
-var drate = Number(document.getElementById('drate').value);
-var mfield = Number(document.getElementById('mfield').value);
-var t = Number(document.getElementById('t').value);
+var rpm = berkenn(document.getElementById('rpm').value);
+var rhl = berkenn(document.getElementById('rhl').value);
+var b = berkenn(document.getElementById('b').value);
 
-var result = mfield*(cir-drate*t)*drate*Math.pow(10,-4)/(2*Math.PI);
+var angvel = (rpm/60)*2*Math.PI;
+var speed = angvel * (rhl/100);
+var bits = speed/(b/1000000);
 
-
-document.getElementById('result').innerHTML = result;
-
+document.getElementById('result1').innerHTML = mert(angvel, 2);
+document.getElementById('result2').innerHTML = mert(speed, 2).toString() + " m/s";
+document.getElementById('result3').innerHTML = selim(bits, 2)
       }
     </script>
   </body>

@@ -3,6 +3,7 @@ let typeJsText = document.querySelector(".animatedText");
 let stringIndex = 0;
 let charIndex = 0;
 let isTyping = true;
+let isActive = false;
 
 function typeJs() {
     if (stringIndex < textArray.length) {
@@ -33,5 +34,31 @@ function typeJs() {
         }
     }
 }
+
+const flickSwitch = document.getElementById('flickSwitch');
+
+flickSwitch.addEventListener('click', function () {
+    // Toggle the state
+    isActive = !isActive;
+  
+    // Update the class to reflect the state
+    if (isActive) {
+      flickSwitch.classList.add('active');
+      
+    } else {
+      flickSwitch.classList.remove('active');
+    }
+    
+    localStorage.setItem('darkMode', isActive ? 'active' : 'passive');
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+      //get darkmode state
+      const darkModeState = localStorage.getItem('darkMode');
+      if (darkModeState === 'active') {
+           isActive = true;
+           flickSwitch.classList.add('active');
+      }
+});
 
 setInterval(typeJs, 120);
