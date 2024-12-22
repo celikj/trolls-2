@@ -29,34 +29,26 @@
     <div class="container">
       <h1>trolls2 hw10 item2</h1>
 
+      <div class="inputs ">
+        <h3>Inputs</h3>
+        sign changes in components wont affect the result!
+  <div class="input">
+    <input id="F_i" placeholder="Fᵢ" type="text" style="float: left; width: 0px;">
+    <input id="F_j" placeholder="Fⱼ" type="text" style="float: left; width: 0px;">
+    <input id="F_k" placeholder="Fₖ" type="text" style="float: left; width: 0px;">
+    </div>
+      
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+</div>
+
       <div class="answers ">
         <h3>Answers</h3>
 
 <div>
     PART A:
-    @DIV{(V@Sub{b}-I(t)*R);L}
-    <div class="screenshots">
-      <img class="img"
-      src="images/baba2.png">
-    </div>
+    <span id="resultA"></span>
 </div>
 
-<div>
-  PART B:
-  @DIV{V@Sub{b};R}
-  <div class="screenshots">
-    <img class="img"
-    src="images/baba3.png">
-  </div>
-</div>
-<div>
-  PART C:
-  @DIV{V@Sub{b};R}(1-exp(-@DIV{R*t;L}))
-  <div class="screenshots">
-    <img class="img"
-    src="images/baba4.png">
-  </div>
-</div>
 
 
       </div>
@@ -73,6 +65,21 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+	   var F_i = berkenn(document.getElementById('F_i').value)*1000;
+     var F_j = berkenn(document.getElementById('F_j').value)*1000;
+     var F_k = berkenn(document.getElementById('F_k').value)*1000;
+     
+     var r_i = 0;
+     var r_j = -8;
+     var r_k = -6;
+
+     resultA = sqrt(sqr(F_j*r_k - F_k*r_j) + sqr(F_k*r_i - F_i*r_k) + sqr(F_i*r_j - F_j*r_i))
+
+	   document.getElementById('resultA').innerHTML = selim(resultA, 2);
+    }
+</script>
   </body>
 
 </html>

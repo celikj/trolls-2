@@ -32,30 +32,64 @@
 
     </div>
 
-    <div class="inputs ">
-      <h3>Inputs</h3>
-
-<div class="input">
-  <input id="r" placeholder="resistance" type="text">
-</div>
-<div class="input">
-<input id="v0" placeholder="v0" type="text">
-</div>
-
-      <button class="calculate-button " onclick="calculate()">Calculate</button>
-    </div>
-
     <div class="answers ">
       <h3>Answers</h3>
 
-<div>
-  PART A:
-  <span id="result"></span>
+      <div>
+        PART A: <hr>
+        <div>
+             <img class="img" src="./9A.png">
+        </div>
+   </div>
+
+    <div>
+        PART B: <hr>
+        <div>
+             <img class="img" src="./9B.png">
+        </div>
+        <div>OR COPY THE FOLLOWING:</div><br>
+        <div>-@DIV{GMm;r}</div>
+   </div>
+   <div>
+    PART C: <hr>
+    <div>
+         <img class="img" src="./9C.png">
+    </div>
+    <div>OR COPY THE FOLLOWING:</div><br>
+    <div>@DIV{GMm;2r}</div>
+</div>
+ 
+   <div>
+        PART D: <hr>
+        <div>
+             <img class="img" src="./9D.png">
+        </div>
+   </div>
+   <div>
+    PART E: <hr>
+    <div>
+         <img class="img" src="./9E.png">
+    </div>
 </div>
 <div>
-  PART B:
-  <span id="result2"></span>
+  PART F: <hr>
+  <div>
+       <img class="img" src="./9F.png">
+  </div>
 </div>
+<div>
+  PART G: <hr>
+  <div>
+       <img class="img" src="./9G.png">
+  </div>
+</div>
+<div>
+  PART H: <hr>
+  <div>
+       <img class="img" src="./9H.png">
+  </div>
+</div>
+
     </div>
   </div>
 
@@ -70,22 +104,6 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
-    <script>
-      function calculate() {
-var v0 = Number(document.getElementById('v0').value);
-var r = Number(document.getElementById('r').value);
-
-
-var result = 2*r;
-var result2= 2*v0;
-
-
-document.getElementById('result').innerHTML = result + " choose ohm from symbols";
-document.getElementById('result2').innerHTML = result2+ " V";
-
-
-      }
-    </script>
   </body>
 
 </html>

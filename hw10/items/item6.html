@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Trolls2 hw9 item6</title>
+    <title>Trolls2 hw10 item6</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -26,40 +26,22 @@
   </head>
 
   <div class="container">
-    <h1>trolls2 hw9 item6</h1>
-
-    <div class="screenshots hidden">
-
-    </div>
-
-    <div class="inputs ">
-      <h3>Inputs</h3>
-
-<div class="input">
-  <input id="t" placeholder="turn" type="text">
-</div>
-<div class="input">
-<input id="d" placeholder="diameter" type="text">
-</div>
-<div class="input">
-  <input id="l" placeholder="length" type="text">
-  </div>
-
-      <button class="calculate-button " onclick="calculate()">Calculate</button>
-    </div>
+    <h1>trolls2 hw10 item6</h1>
 
     <div class="answers ">
       <h3>Answers</h3>
+      
+    <div>
+        PART A: <hr>
+        <div>
+             <img class="img" src="./6A.png" style="float: left; width: 750px;">
+        </div>
+        <div>OR COPY THE FOLLOWING:</div><br>
+        <div>mRv@Sub{z}((sin(@DIV{2&amppi;v@Sub{z}t;d})-@DIV{2&amppi;v@Sub{z}t;d}cos(@DIV{2&amppi;v@Sub{z}t;d}))@HAT{i}-(@DIV{2&amppi;v@Sub{z}t;d}sin(@DIV{2&amppi;v@Sub{z}t;d})+cos(@DIV{2&amppi;v@Sub{z}t;d}))@HAT{j}+@DIV{2&amppi;R;d}@HAT{k})</div>
+   </div>
 
-<div>
-  PART A:
-  <span id="result"></span>
-</div>
-<div>
-  PART B:
-  <span id="result2"></span>
-</div>
-    </div>
+  </div>
+
   </div>
 
     <div class="buttons ">
@@ -73,20 +55,7 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
-    <script>
-      function calculate() {
-var t = Number(document.getElementById('t').value);
-var d = Number(document.getElementById('d').value);
-var l = Number(document.getElementById('l').value);
 
-var result = 1256*Math.pow(10,-6)*t*t*Math.PI*(d*d/4)/l/100000;
-var result2 = 4*result*l/(d*d*Math.PI*Math.PI*1200*4*Math.pow(10,-7))*100;
-
-document.getElementById('result').innerHTML = result + " H";
-document.getElementById('result2').innerHTML = Math.pow(result2,0.5);;
-
-      }
-    </script>
   </body>
 
 </html>

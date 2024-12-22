@@ -35,15 +35,19 @@
     <div class="inputs ">
       <h3>Inputs</h3>
 
-<div class="input">
-  <input id="l" placeholder="length" type="text">
-</div>
-<div class="input">
-  <input id="dia" placeholder="diameter" type="text">
-</div>
-<div class="input">
-  <input id="m" placeholder="mfield (T)" type="text">
-</div>
+      <div class="input">
+        <input id="m_cy" placeholder="mass of cylinder (kg)" type="text" style="float: left; width: 0px;">
+        <input id="r_cy" placeholder="radius of cylinder (cm)" type="text" style="float: left; width: 0px;">
+     </div>
+
+     <div class="input">
+      <input id="m_arm" placeholder="mass of one arm (kg)" type="text" style="float: left; width: 0px;">
+      <input id="l_arm" placeholder="length of one arm (cm)" type="text" style="float: left; width: 0px;">
+   </div>
+
+    <div class="input">
+     <input id="t_stretch" placeholder="time of one rotation (s)" type="text">
+  </div>
 
       <button class="calculate-button " onclick="calculate()">Calculate</button>
     </div>
@@ -53,7 +57,25 @@
 
 <div>
   PART A:
-  <span id="result"></span>
+  <span id="resultA"></span>
+</div>
+<div>
+  PART B:
+  <span id="resultB"></span>
+</div>
+<div>
+  PART C:
+  <span id="resultC"></span>
+</div>
+<div>
+  PART D:
+  <span id="resultD"></span>
+</div>
+<div>
+  PART E: <hr>
+  <div>
+       <img class="img" src="./7E.png">
+  </div>
 </div>
 
     </div>
@@ -72,15 +94,23 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var l = Number(document.getElementById('l').value);
-var dia = Number(document.getElementById('dia').value);
-var m = Number(document.getElementById('m').value);
+        var m_cy = berkenn(document.getElementById('m_cy').value);
+         var r_cy = berkenn(document.getElementById('r_cy').value)/100;
+         var m_arm = berkenn(document.getElementById('m_arm').value);
+         var l_arm = berkenn(document.getElementById('l_arm').value)/100;
+         var t_stretch = berkenn(document.getElementById('t_stretch').value);
 
-var result = m*m*Math.PI*(dia*dia/4)*l/(2*1256*Math.pow(10,-6))/1000;
+         var resultA = m_cy*sqr(r_cy)/2 + 2*m_arm*(3*sqr(r_cy) + 3*r_cy*l_arm + sqr(l_arm))/3;
+         var resultB = m_cy*sqr(r_cy)/2 + 2*m_arm*sqr(r_cy);
+         var w_stretched = 2*Math.PI/t_stretch;
+         var w_sides = resultA*w_stretched/resultB;
+         var resultC = 2*Math.PI/w_sides;
+         var resultD = (resultA*sqr(w_stretched) - resultB*sqr(w_sides))/2;
 
-
-document.getElementById('result').innerHTML = result;
-
+         document.getElementById('resultA').innerHTML = mert(resultA, 2) + " kg*m^2";
+         document.getElementById('resultB').innerHTML = mert(resultB, 2) + " kg*m^2";
+         document.getElementById('resultC').innerHTML = mert(resultC, 2) + " s";
+         document.getElementById('resultD').innerHTML = mert(resultD, 2) + " J";
       }
     </script>
   </body>
