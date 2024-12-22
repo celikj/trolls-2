@@ -79,6 +79,9 @@ function berkenn(n){
 	if(n.includes('*')){
 		prefix = '*';
 	}
+	if(n.includes('x')){
+		prefix = 'x';
+	}
 	else if(n.includes('×')){
 		prefix = '×';
 	}
