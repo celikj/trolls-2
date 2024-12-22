@@ -1,0 +1,85 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw11 item5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw11 item5</h1>
+
+      <div class="inputs ">
+        <h3>Inputs</h3>
+      
+        <div class="input">
+           <input id="m" placeholder="mass of meteorite (kg)" type="text">
+        </div>
+        <div class="input">
+          <input id="v" placeholder="velocity of meteorite (m/s)" type="text">
+       </div>
+        
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
+
+      <div class="answers ">
+        <h3>Answers</h3>
+        <div>
+          PART A: <hr>
+          <div id="resultA"></div>
+     </div>
+
+      </div>
+    </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item4.html">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item6.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+         var m = berkenn(document.getElementById('m').value);
+         var v = berkenn(document.getElementById('v').value);
+
+         var w = Math.PI/43200;
+         var M = 5.98*pow(10, 24);
+         var r = 6.38*pow(10, 6);
+         var I_new = sqr(r)*(2*M/5 + m);
+         var L_earth = 2*M*sqr(r)*w/5;
+         var L_meteor = -m*v*r/sqrt(2);
+         var w_new = (L_earth + L_meteor)/I_new;
+         var resultA = (w_new - w)/w;
+    
+         document.getElementById('resultA').innerHTML = selim(resultA, 2);
+      }
+    </script>
+  </body>
+
+</html>

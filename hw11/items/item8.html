@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw11 item8</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <div class="container">
+    <h1>trolls2 hw11 item8</h1>
+
+    <div class="inputs ">
+      <h3>Inputs</h3>
+    
+      <div class="input">
+        <input id="m" placeholder="mass of tower (kg)" type="text">
+      </div>
+    
+      <div class="input">
+            <input id="l" placeholder="length of tower (m)" type="text" style="float: left; width: 0px;">
+            <input id="theta" placeholder="angle (°)" type="text" style="float: left; width: 0px;">
+            
+      </div>
+      
+      <button class="calculate-button " onclick="calculate()">Calculate</button>
+    </div>
+
+
+    <div class="answers ">
+      <h3>Answers</h3>
+
+      <div>
+        PART A: <hr>
+        Add these points to your graph
+        <div id="result0"></div>
+        <div id="result1"></div>
+        <div id="result2"></div>
+        <div id="result3"></div>
+        <div id="result4"></div>
+        <div id="result5"></div>
+        <div id="result6"></div>
+        <div id="result7"></div>
+        <div id="result8"></div>
+        <div id="result9"></div>
+        <div><img class="img" src="./8A.png" style="float:left; width: 450px;"></div>
+   </div>
+    </div>
+  </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item7.html ">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item9.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function v_theta(g, l, theta){
+        return sqrt(3*g*l*(1-dcos(theta)));
+      }
+
+      function calculate() {
+         var m = berkenn(document.getElementById('m').value);
+         var l = berkenn(document.getElementById('l').value);
+         var theta = berkenn(document.getElementById('theta').value);
+
+        for (let a = 0; a <= 90; a += 10) {
+          var v = v_theta(9.8, l, a);
+          var kusurat = Math.trunc(v*100) - Math.trunc(v)*100;
+          var value = 'bruh';
+          if(kusurat < 25){value = Math.trunc(v);}
+          else if(kusurat >= 25 && kusurat < 75){value = Math.trunc(v) + 0.5;}
+          else if(kusurat >= 75){value = Math.trunc(v) + 1;}
+          document.getElementById(`result${a/10}`).innerHTML = `x: ${a} y: ${value}`;
+        }
+    
+         
+      }
+    </script>
+  </body>
+
+</html>

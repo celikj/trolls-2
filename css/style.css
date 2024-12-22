@@ -46,6 +46,9 @@
     color: white;
     --secondary: #262727;
     --secondary-light: #1b1d1d;
+	.hw-items>a {
+      color: white;
+    }
   }
 
   /* Style for the switch container in the top-right corner */

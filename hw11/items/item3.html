@@ -1,0 +1,105 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw11 item3</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw11 item3</h1>
+
+      <div class="inputs">
+        <h3>Inputs</h3>
+  
+  <div class="input">
+    <input id="r_i" placeholder="rᵢ" type="text" style="float: left; width: 0px;">
+    <input id="r_j" placeholder="rⱼ" type="text" style="float: left; width: 0px;">
+    <input id="r_k" placeholder="rₖ" type="text" style="float: left; width: 0px;">
+    </div>
+
+    <div class="input">
+      <input id="v_i" placeholder="Vᵢ" type="text" style="float: left; width: 0px;">
+      <input id="v_j" placeholder="Vⱼ" type="text" style="float: left; width: 0px;">
+      <input id="v_k" placeholder="Vₖ" type="text" style="float: left; width: 0px;">
+      </div>
+
+      <div class="input">
+        <input id="m" placeholder="mass of particle (kg)" type="text">
+     </div>
+      
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+</div>
+
+      <div class="answers ">
+        <h3>Answers</h3>
+        <div>
+          PART A:
+          <span id="resultA"></span>
+     </div>
+     <div>
+      PART B:
+      <span id="resultB"></span>
+ </div>
+ <div>
+  PART C:
+  <span id="resultC"></span>
+</div>
+
+
+      </div>
+    </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item2.html">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item4.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+	   var r_i = berkenn(document.getElementById('r_i').value);
+     var r_j = berkenn(document.getElementById('r_j').value);
+     var r_k = berkenn(document.getElementById('r_k').value);
+     var v_i = berkenn(document.getElementById('v_i').value);
+     var v_j = berkenn(document.getElementById('v_j').value);
+     var v_k = berkenn(document.getElementById('v_k').value);
+     var m = berkenn(document.getElementById('m').value);
+
+     resultA = m*(v_k*r_j - v_j*r_k);
+     resultB = m*(v_i*r_k - v_k*r_i);
+     resultC = m*(v_j*r_i - v_i*r_j);
+
+	   document.getElementById('resultA').innerHTML = mert(resultA, 2);
+     document.getElementById('resultB').innerHTML = mert(resultB, 2);
+     document.getElementById('resultC').innerHTML = mert(resultC, 2);
+    }
+</script>
+  </body>
+
+</html>

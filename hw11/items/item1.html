@@ -1,0 +1,134 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw11 item1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw11 item1</h1>
+
+      <div class="inputs ">
+        <h3>Inputs</h3>
+
+  <div class="input">
+    <input id="A_i" placeholder="Aᵢ" type="text" style="float: left; width: 0px;">
+    <input id="A_j" placeholder="Aⱼ" type="text" style="float: left; width: 0px;">
+    <input id="A_k" placeholder="Aₖ" type="text" style="float: left; width: 0px;">
+    </div>
+  
+    <div class="input">
+      <input id="B_i" placeholder="Bᵢ" type="text" style="float: left; width: 0px;">
+      <input id="B_j" placeholder="Bⱼ" type="text" style="float: left; width: 0px;">
+      <input id="B_k" placeholder="Bₖ" type="text" style="float: left; width: 0px;">
+      </div>
+
+      <div class="input">
+        <input id="C_i" placeholder="Cᵢ" type="text" style="float: left; width: 0px;">
+        <input id="C_j" placeholder="Cⱼ" type="text" style="float: left; width: 0px;">
+        <input id="C_k" placeholder="Cₖ" type="text" style="float: left; width: 0px;">
+        </div>
+      
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+</div>
+
+      <div class="answers ">
+        <h3>Answers</h3>
+
+<div>
+    PART A:
+    <span id='resultA'></span>
+</div>
+<div>
+  PART B:
+  <span id='resultB'></span>
+</div>
+<div>
+  PART C:
+  <span id='resultC'></span>
+</div>
+<div>
+  PART D:
+  <span id='resultD'></span>
+</div>
+<div>
+  PART E:
+  <span id='resultE'></span>
+</div>
+<div>
+  PART F:
+  <span id='resultF'></span>
+</div>
+
+
+      </div>
+    </div>
+
+    <div class="buttons ">
+      <a class="button-previous" ></a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item2.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+	   var A_i = berkenn(document.getElementById('A_i').value);
+     var A_j = berkenn(document.getElementById('A_j').value);
+     var A_k = berkenn(document.getElementById('A_k').value);
+     var B_i = berkenn(document.getElementById("B_i").value);
+     var B_j = berkenn(document.getElementById("B_j").value);
+     var B_k = berkenn(document.getElementById("B_k").value);
+     var C_i = berkenn(document.getElementById("C_i").value);
+     var C_j = berkenn(document.getElementById("C_j").value);
+     var C_k = berkenn(document.getElementById("C_k").value);
+
+     var resultA1 = 2*A_i + 3*B_i + C_i;
+     var resultA2 = 2*A_j + 3*B_j + C_j;
+     var resultA3 = 2*A_k + 3*B_k + C_k;
+     var resultB1 = sqrt(sqr(A_i) + sqr(A_j) + sqr(A_k));
+     var resultB2 = sqrt(sqr(B_i) + sqr(B_j) + sqr(B_k));
+     var resultB3 = sqrt(sqr(C_i) + sqr(C_j) + sqr(C_k));
+     var resultC = A_i*B_i + A_j*B_j + A_k*B_k;
+     var resultD = Math.acos((B_i*C_i + B_j*C_j + B_k*C_k)/(resultB2*resultB3));
+     var resultE1 = B_j*C_k - B_k*C_j;
+     var resultE2 = B_k*C_i - B_i*C_k;
+     var resultE3 = B_i*C_j - B_j*C_i;
+     var resultF = A_i*resultE1 + A_j*resultE2 + A_k*resultE3;
+
+	   document.getElementById('resultA').innerHTML = resultA1 + ',' + resultA2 + ',' + resultA3;
+     document.getElementById('resultB').innerHTML = mert(resultB1, 3) + ',' + mert(resultB2, 3) + ',' + mert(resultB3, 3);
+     document.getElementById('resultC').innerHTML = resultC;
+     document.getElementById('resultD').innerHTML = mert(resultD, 2) + " radians";
+     document.getElementById('resultE').innerHTML = resultE1 + ',' + resultE2 + ',' + resultE3;
+     document.getElementById('resultF').innerHTML = resultF;
+    }
+</script>
+  </body>
+
+</html>
