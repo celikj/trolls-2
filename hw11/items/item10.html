@@ -27,57 +27,30 @@
 
   <body>
     <div class="container">
-      <h1>trolls2 hw11 item11</h1>
-      <div class="screenshots hidden">
-
-      </div>
+      <h1>trolls2 hw11 item6</h1>
+      <div class="inputs ">
+        <h3>Inputs</h3>
   
+        <div class="input">
+          <input id="t" placeholder="tall (m)" type="text">
+          
+       </div>
+  
+       <div class="input">
+        <input id="w" placeholder="wide (m)" type="text">
+     </div>
+     <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
       <div class="answers ">
         <h3>Answers</h3>
-
-        <div>
-          PART A: <hr>
-          <div>
-               <img class="img" src="./10A.png">
-          </div>
-          <div>OR COPY THE FOLLOWING:</div><br>
-          <div>@DIV{m@Sub{p}v@Sub{0};m@Sub{p}+m@Sub{s}}</div>
-     </div>
-     <div>
-      PART B: <hr>
+        
       <div>
-           <img class="img" src="./10B.png">
-      </div>
-      <div>OR COPY THE FOLLOWING:</div><br>
-      <div>@DIV{m@Sub{s}D;m@Sub{p}+m@Sub{s}}</div>
- </div>
- <div>
-  PART C: <hr>
-  <div>
-       <img class="img" src="./10C.png">
-  </div>
-  <div>OR COPY THE FOLLOWING:</div><br>
-  <div>@DIV{m@Sub{p}m@Sub{s}v@Sub{0}D;m@Sub{p}+m@Sub{s}}</div>
-</div>
-<div>
-  PART D: 🤡<hr>
-  <div>
-       <img class="img" src="./10D.png">
-  </div>
-  <div>OR COPY THE FOLLOWING:</div><br>
-  <div>@DIV{m@Sub{p}m@Sub{s}v@Sub{0}D;m@Sub{p}m@Sub{s}D@Sup{2}+I@Sub{0}(m@Sub{p}+m@Sub{s})}</div>
-</div>
-
-<div>
-  PART E: <hr>
-  <div>
-       <img class="img" src="./10E.png">
-  </div>
-</div>
-
-
-      </div>
-
+          PART A: <hr>
+          <span id="resultA"></span>
+     </div>
+  
+    </div>
+  
     </div>
     
 
@@ -92,6 +65,17 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+        var t = berkenn(document.getElementById('t').value);
+         var w = berkenn(document.getElementById('w').value);
+         var g = 9.8;
+         var resultA = w/2*g/(t/2)
+         
+
+         document.getElementById('resultA').innerHTML = mert(resultA, 2) + " m/s^2";
+      }
+    </script>
 
   </body>
 
